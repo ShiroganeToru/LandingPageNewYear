@@ -119,18 +119,59 @@ buttonWish.setAttribute('class', 'button-wish');
 buttonWish.innerText = "Wish";
 
 //form wish
-// const formWish = document.createElement('form');
-// WishingContainer.appendChild(formWish);
-// const formFiled = document.createElement('div');
-// formFiled.className = 'form-field';
-// formWish.appendChild(formFiled);
-// const formInput = document.createElement('input');
-// const iconForm = document.createElement('span');
-// formInput.setAttribute('class', 'form-input');
-// iconForm.setAttribute('class', 'icon-form');
-// formFiled.appendChild(formInput);
-// formFiled.appendChild(iconForm);
+const formWishContainer = document.createElement('div');
+formWishContainer.className = 'form-wish-container';
+const formWishLayer = document.createElement('div');
+formWishLayer.className = 'form-wish-layer';
+formWishContainer.appendChild(formWishLayer);
+const formWish = document.createElement('form');
+formWish.className = 'form-wish';
+formWishContainer.appendChild(formWish);
+const formClose = document.createElement('div');
+formClose.className = 'form-close';
+const formCloseIcon = new Image();
+formCloseIcon.src = "../assets/img/Wishing/close.png";
+formCloseIcon.className = 'form-i';
+formClose.appendChild(formCloseIcon);
+formWish.appendChild(formClose);
+const formCat = new Image();
+formCat.src = '../assets/img/Wishing/cat-fortune-form.png';
+formCat.className = 'cat-fortune-form';
+formWish.appendChild(formCat);
+const formInput = document.createElement('textarea');
+formWish.appendChild(formInput);
+formInput.setAttribute('rows', '5');
+formInput.setAttribute('cols', '50');
+formInput.setAttribute('class', 'form-input');
+formInput.setAttribute('placeholder', 'Nhập nguyện ước của bạn tại đây...');
+const formSubmit = document.createElement('input');
+formSubmit.setAttribute('type', 'submit');
+formSubmit.setAttribute('class', 'form-submit');
+formSubmit.setAttribute('value', 'Ước nguyện');
+formWish.appendChild(formSubmit);
+WishingContainer.appendChild(formWishContainer);
 
+// event click button wish
+buttonWish.onclick = function() {
+    fadeIn(formWish);
+}
+
+formSubmit.onclick = function() {
+    fadeOut(formWish);
+}
+
+formClose.onclick = function() {
+    fadeOut(formWish);
+}
+
+function fadeIn(el) {
+    formWishContainer.classList.add("open");
+    el.classList.add("show-form");
+}
+function fadeOut(el) {
+    formWishContainer.classList.remove("open");
+    el.classList.remove("show-form");
+}
 const WishingStyle = document.createElement('style');
 document.head.appendChild(WishingStyle);
 WishingStyle.innerHTML = `
@@ -272,8 +313,8 @@ WishingStyle.innerHTML = `
     }
     .button-wish {
         position: absolute;
-        left: 50%;
-        top: 70%;
+        left: 51%;
+        top: 90%;
         transform: translate(-50%, 40%);
         width: 60px;
         height: 30px;
@@ -283,32 +324,109 @@ WishingStyle.innerHTML = `
         border: none;
         border-radius: 6px;
         cursor: pointer;
+        transition: all 200ms;
     }
-    .icon-form {
-        font-size: 2rem;
-    }
-    .form-field {
-        position: relative;
-        width: 70%;
-        height: 350px;
-        left: 50%;
-        transform: translate(-50%, 50%);
-    }
-    .icon-form {
-        position: absolute;
-        right: 1em;
-    }
-    .form-input {
-        width: 100%;
-        height: 50px;
-        border-radius: 0.25em;
-        border-style: none;
-        border-width: 2px;
-        border-size: 1.5rem;;
-        padding: 0.5em 4em 0.5em 2em;
-        border-color: forestgreen;
+    .button-wish:hover {
+        opacity: 0.8;
     }
 
+    .form-wish-container {
+        width: 0;
+        height: 0;
+    }
+    .form-wish-layer {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        z-index: 6;
+    }
+    .form-wish {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        background: #812126;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 2em;
+        z-index: 8;
+        opacity: 0;
+        transition: opacity 600ms;
+    }
+    .cat-fortune-form {
+        position: absolute;
+        width: 40%;
+        top: 1%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .form-input {
+        position: absolute;
+        width: 80%;
+        height: 80px;
+        border: none;
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        outline: none;
+        color: #812126;
+        border-bottom: 3px solid #eee;
+        font-size: 1.3em;
+        z-index: 7;
+        border-radius: 0.3em;
+        padding: 0.9em;
+        resize: none;
+    }
+    .form-submit {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #FDE726;
+        cursor: pointer;
+        border: none;
+        border-radius: 0.3em;
+        width: 150px;
+        height: 40px;
+        border-color: #ffa260;
+        font-weight: bold;
+        font-size: 1.1em;
+        color: #812126;
+        transition: all 200ms;
+    }
+    .form-submit:hover {
+        background: #EBD617;
+    }
+    .form-i {
+        position: absolute;
+        width: 2em;
+        top: 1em;
+        right: 1em;
+        cursor: pointer;
+        transform: rotate(0deg);
+        transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    .form-i:hover {
+        transform: rotate(360deg);
+        width: 2.5em;
+    }
+    .form-wish-container.open {
+        width: 100vw;
+        height: 100vh;
+        transition: all 700ms;
+    }
+    .show-form {
+        opacity: 1;
+        transition: opacity 700ms;
+    }
+    .hide-form {
+        opacity: 0;
+        transition: opacity 600ms;
+    }
 
     @media only screen and (max-width: 500px) {
         .circle {
