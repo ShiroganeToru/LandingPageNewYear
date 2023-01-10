@@ -1,4 +1,4 @@
-const fireworksContainer = document.createElement('div');
+const fireworksContainer = document.createElement('section');
 const fireworksCanvas = document.createElement('canvas');
 fireworksCanvas.setAttribute('id', 'fw-canvas');
 fireworksContainer.appendChild(fireworksCanvas);
@@ -10,9 +10,35 @@ FireworksStyle.innerHTML = `
         margin: 0;
         overflow: hidden;
         background: #d20000;
+        font-family: sans-serif;
     }
     #fw-canvas {
         // background: #d20000;
+    }
+    .happy-new-year-text {
+        font-family: sans-serif;
+        width: 100%;
+        font-size: 6em;
+        position: absolute;
+        color: #FDEEBD;
+        font-weight: bold;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+    }
+    .year-text {
+        font-family: sans-serif;
+        top: 30%;
+        font-size: 18em;
+    }
+    .description-new-year {
+        font-size: 2em;
+        color: #F5B41C;
+        top: 70%;
+        font-weight: 500;
     }
 `;
 document.head.appendChild(FireworksStyle);
@@ -134,3 +160,19 @@ Particle.prototype = {
         c.restore();
     }
 }
+
+//text 
+const happyNewYearText = document.createElement('div');
+happyNewYearText.className = 'happy-new-year-text';
+happyNewYearText.innerText = "Happy New Year";
+fireworksContainer.appendChild(happyNewYearText);
+
+const yearText = document.createElement('div');
+yearText.setAttribute('class', 'happy-new-year-text year-text');
+yearText.innerText = "" + new Date().getFullYear();
+fireworksContainer.appendChild(yearText);
+
+const descriptionNewYear = document.createElement('div');
+descriptionNewYear.setAttribute('class', 'happy-new-year-text description-new-year');
+descriptionNewYear.innerText = "May this new year brings you and your family prosperity, health, and happiness";
+fireworksContainer.appendChild(descriptionNewYear);
