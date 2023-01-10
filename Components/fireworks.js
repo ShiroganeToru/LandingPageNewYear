@@ -28,17 +28,27 @@ FireworksStyle.innerHTML = `
         display: flex;
         justify-content: center;
         text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+        opacity: 0;
+        transition: all 300ms;
     }
     .year-text {
         font-family: sans-serif;
         top: 30%;
         font-size: 18em;
+        opacity: 0;
+        transition: all 300ms;
     }
     .description-new-year {
         font-size: 2em;
         color: #F5B41C;
         top: 70%;
         font-weight: 500;
+        opacity: 0;
+        transition: all 300ms;
+    }
+    .show {
+        opacity: 1;
+        transition: opacity 300ms;
     }
 `;
 document.head.appendChild(FireworksStyle);
@@ -53,11 +63,22 @@ function (callback) {
 var fCanvas, fCtx, w, h, fParticles = [], fProbability = 0.04, fxPoint, fyPoint;
 
 function waitCountDown() {
-    let timeout = setTimeout(fwLoad, 3000);
-    let audioPlay = setTimeout(playHappyNewYearAudio, 3000);
-    let audioHover = setTimeout(audioPlayHover, 3000);
+    setTimeout(fwLoad, 3000);
+    setTimeout(playHappyNewYearAudio, 3000);
+    setTimeout(audioPlayHover, 3000);
+    setTimeout(addText, 4000);
 }
 
+function addText() {
+    happyNewYearText.classList.add("show");
+    yearText.classList.add("show");
+    descriptionNewYear.classList.add("show");
+}
+function removeText() {
+    happyNewYearText.classList.remove("show");
+    yearText.classList.remove("show");
+    descriptionNewYear.classList.remove("show");
+}
 function playHappyNewYearAudio() {
     const happyNewYearAudio = new Audio('/assets/audio/happy_new_year_audio.mp3');
     happyNewYearAudio.play();
