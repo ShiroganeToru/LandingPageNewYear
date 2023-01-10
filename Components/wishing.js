@@ -1,12 +1,8 @@
+import callSakuraFalling from "./sakurafall.js";
+
 const WishingContainer = document.createElement('section');
 WishingContainer.setAttribute('class', 'wishing-container');
 document.body.appendChild(WishingContainer);
-
-// window.addEventListener("resize", resize);
-// function resize() {
-//     vw = window.innerWidth;
-//     vh = window.innerHeight;
-// }
 
 const lionLeft = new Image();
 lionLeft.src = "/assets/img/Wishing/lion-left.png";
@@ -99,8 +95,6 @@ function createMoneyRed(i) {
     newMoneyRed.style.left = xy[1] + 'px';
 }
 function getRandomPosition(moneyRed) {
-    // let x = document.body.offsetHeight;
-    // let y = document.body.offsetWidth;
     let x = (MoneyRedContainer.offsetWidth/3)/3;
     let y = (MoneyRedContainer.offsetWidth/3)/1.9;
     let randomX = Math.floor(Math.random() * x);
@@ -172,6 +166,10 @@ function fadeOut(el) {
     formWishContainer.classList.remove("open");
     el.classList.remove("show-form");
 }
+
+//sakura-fall
+callSakuraFalling();
+
 const WishingStyle = document.createElement('style');
 document.head.appendChild(WishingStyle);
 WishingStyle.innerHTML = `
@@ -467,6 +465,9 @@ WishingStyle.innerHTML = `
             top: 4em;
             left: 3em;
         }
+        .new-money-red {
+            display: none;
+        }
     }
     @media only screen and (max-width: 290px) {
         .lion-left {
@@ -478,6 +479,9 @@ WishingStyle.innerHTML = `
         .circle {
             width: 270px;
             transform: translate(-50%, 70%);
+        }
+        .button-wish {
+            top: 73%;
         }
     }
 `;

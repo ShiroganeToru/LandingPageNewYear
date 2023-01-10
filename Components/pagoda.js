@@ -1,3 +1,4 @@
+import callBackMoney from "./moneyFall.js";
 const PagodaContainer = document.createElement('section');
 PagodaContainer.setAttribute('class', 'pagoda-container');
 document.body.appendChild(PagodaContainer);
@@ -80,20 +81,50 @@ PagodaContainer.appendChild(fortune);
 // before pray ends
 
 //after pray starts
-// fortunePray.setAttribute('class', 'fortune-pray');
-// const handPrayDiv = document.createElement('div');
-// handPrayDiv.setAttribute('class', 'hand-pray-div');
-// handPray.setAttribute('class', 'hand-pray');
-// fortunePrayRight.setAttribute('class', 'fortune-pray-right');
-// const fortunePrayDiv = document.createElement('div');
-// fortunePrayDiv.setAttribute('class', 'fortune-pray-div');
-// PagodaContainer.appendChild(fortunePrayDiv);
-// fortunePrayDiv.appendChild(fortunePray);
-// PagodaContainer.appendChild(handPrayDiv);
-// handPrayDiv.appendChild(handPray);
-// PagodaContainer.appendChild(fortunePrayRight);
-// PagodaContainer.appendChild(haloContainer);
-//after pray ends
+fortunePray.setAttribute('class', 'fortune-pray');
+const handPrayDiv = document.createElement('div');
+handPrayDiv.setAttribute('class', 'hand-pray-div');
+handPray.setAttribute('class', 'hand-pray');
+fortunePrayRight.setAttribute('class', 'fortune-pray-right');
+const fortunePrayDiv = document.createElement('div');
+fortunePrayDiv.setAttribute('class', 'fortune-pray-div');
+PagodaContainer.appendChild(fortunePrayDiv);
+fortunePrayDiv.appendChild(fortunePray);
+PagodaContainer.appendChild(handPrayDiv);
+handPrayDiv.appendChild(handPray);
+PagodaContainer.appendChild(fortunePrayRight);
+PagodaContainer.appendChild(haloContainer);
+// after pray ends
+
+buttonPray.onclick = function() {
+    showAfterPray();
+    setTimeout(showBeforePray, 12500);
+}
+function showAfterPray () {
+    fortunePray.classList.add('show');
+    handPrayDiv.classList.add('show');
+    handPrayDiv.style.display = 'block';
+    fortunePrayRight.classList.add('show');
+    haloContainer.classList.add('show');
+    callBackMoney();
+
+    buttonPray.classList.add('hide');
+    catContainer.classList.add('hide');
+    fortune.classList.add('hide');
+}
+
+function showBeforePray () {
+    fortunePray.classList.remove('show');
+    handPrayDiv.classList.remove('show');
+    handPrayDiv.style.display = 'block';
+    fortunePrayRight.classList.remove('show');
+    haloContainer.classList.remove('show');
+
+    buttonPray.classList.remove('hide');
+    catContainer.classList.remove('hide');
+    fortune.classList.remove('hide');
+}
+
 const PagodaStyle = document.createElement('style');
 document.head.appendChild(PagodaStyle);
 PagodaStyle.innerHTML = `
@@ -230,6 +261,9 @@ PagodaStyle.innerHTML = `
         left: 50%;
         z-index: 6;
         top: 85%;
+        opacity: 0;
+        display: none;
+        transition: opacity 300ms;
     }
     .hand-pray {
         position: relative;
@@ -241,6 +275,8 @@ PagodaStyle.innerHTML = `
         width: 15em;
         width: fit-content;
         z-index: 6;
+        opacity: 0;
+        transition: opacity 300ms;
     }
     .fortune-pray-right {
         position: absolute;
@@ -249,12 +285,16 @@ PagodaStyle.innerHTML = `
         width: fit-content;
         z-index: 6;
         top: 60%;
+        opacity: 0;
+        transition: opacity 300ms;
     }
     .halo-container {
         position: absolute;
         left: 50%;
         z-index: 0;
         top: 9%;
+        opacity: 0;
+        transition: opacity 300ms;
     }
     .halo {
         position: relative;
@@ -265,6 +305,14 @@ PagodaStyle.innerHTML = `
         top: 1.85em;
         border-radius: 50%;
         box-shadow: 0 0 1rem rgb(255,255,0), -.125rem -.125rem 3rem rgb(255,255,0), .125rem .125rem 5rem rgb(255,255,0);
+    }
+    .show {
+        opacity: 1;
+        transition: opacity 300ms;
+    }
+    .hide {
+        opacity: 0;
+        transition: opacity 300ms;
     }
     @keyframes sway {
         0%{transform: rotate(10deg);}
