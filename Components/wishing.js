@@ -323,6 +323,7 @@ WishingStyle.innerHTML = `
         border-radius: 6px;
         cursor: pointer;
         transition: all 200ms;
+        font-weight: bold;
     }
     .button-wish:hover {
         opacity: 0.8;
