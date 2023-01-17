@@ -1,5 +1,5 @@
 import callBackMoney from "./moneyFall.js";
-const PagodaContainer = document.createElement('section');
+export const PagodaContainer = document.createElement('section');
 PagodaContainer.setAttribute('class', 'pagoda-container');
 document.body.appendChild(PagodaContainer);
 
@@ -125,7 +125,7 @@ function showBeforePray () {
     fortune.classList.remove('hide');
 }
 
-const PagodaStyle = document.createElement('style');
+export const PagodaStyle = document.createElement('style');
 document.head.appendChild(PagodaStyle);
 PagodaStyle.innerHTML = `
     body {
@@ -160,6 +160,7 @@ PagodaStyle.innerHTML = `
         position: absolute;
         left: 0.005em;
         z-index: 6;
+        top: 0.05em;
     }
     .apricot {
         position: absolute;
@@ -313,6 +314,17 @@ PagodaStyle.innerHTML = `
     .hide {
         opacity: 0;
         transition: opacity 300ms;
+    }
+    .fade-in {
+        animation: fadeIn 1s;
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
     @keyframes sway {
         0%{transform: rotate(10deg);}

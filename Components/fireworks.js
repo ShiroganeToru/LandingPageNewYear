@@ -1,10 +1,10 @@
-const fireworksContainer = document.createElement('section');
+export const fireworksContainer = document.createElement('section');
 const fireworksCanvas = document.createElement('canvas');
 fireworksCanvas.setAttribute('id', 'fw-canvas');
 fireworksContainer.appendChild(fireworksCanvas);
 document.body.append(fireworksContainer);
 fireworksContainer.style.width = '100%';
-const FireworksStyle = document.createElement('style');
+export const FireworksStyle = document.createElement('style');
 FireworksStyle.innerHTML = `
     body {
         margin: 0;
@@ -37,6 +37,7 @@ FireworksStyle.innerHTML = `
         transition: all 300ms;
         margin-bottom: 0.5em;
         margin-top: -0.25em;
+        cursor: default;
     }
     .year-text {
         font-size: 18em;
@@ -56,6 +57,17 @@ FireworksStyle.innerHTML = `
     .show {
         opacity: 1;
         transition: opacity 300ms;
+    }
+    .fade-in {
+        animation: fadeIn 1s;
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
     @media only screen and (max-width: 1100px) {
         .happy-new-year-text {
@@ -113,7 +125,7 @@ function (callback) {
 
 var fCanvas, fCtx, w, h, fParticles = [], fProbability = 0.04, fxPoint, fyPoint;
 
-function waitCountDown() {
+export function waitCountDown() {
     setTimeout(fwLoad, 3000);
     setTimeout(playHappyNewYearAudio, 3000);
     setTimeout(audioPlayHover, 3000);
@@ -252,3 +264,13 @@ textContainer.appendChild(yearText);
 textContainer.appendChild(happyNewYearText);
 textContainer.appendChild(descriptionNewYear);
 fireworksContainer.appendChild(textContainer);
+
+export function fadeIn() {
+    fireworksContainer.classList.add("fade-in");
+}
+export function fadeOut() {
+        fireworksContainer.classList.remove("fade-in");
+        fireworksContainer.style.opacity = "0";
+        fireworksContainer.style.display = "none";
+        FireworksStyle.remove();
+}

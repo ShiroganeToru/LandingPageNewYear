@@ -1,6 +1,6 @@
-import callSakuraFalling from "./sakurafall.js";
+// import callSakuraFalling from "./sakurafall.js";
 
-const WishingContainer = document.createElement('section');
+export const WishingContainer = document.createElement('section');
 WishingContainer.setAttribute('class', 'wishing-container');
 document.body.appendChild(WishingContainer);
 
@@ -86,7 +86,7 @@ for (let i = 0; i < 35; i++) {
 }
 function createMoneyRed(i) {
     const newMoneyRed = new Image();
-    newMoneyRed.src = "../assets/img/Wishing/money-red.png";
+    newMoneyRed.src = "/assets/img/Wishing/money-red.png";
     newMoneyRed.setAttribute("style", "position: absolute");
     MoneyRedContainer.appendChild(newMoneyRed);
     newMoneyRed.className = 'new-money-red';
@@ -124,12 +124,12 @@ formWishContainer.appendChild(formWish);
 const formClose = document.createElement('div');
 formClose.className = 'form-close';
 const formCloseIcon = new Image();
-formCloseIcon.src = "../assets/img/Wishing/close.png";
+formCloseIcon.src = "/assets/img/Wishing/close.png";
 formCloseIcon.className = 'form-i';
 formClose.appendChild(formCloseIcon);
 formWish.appendChild(formClose);
 const formCat = new Image();
-formCat.src = '../assets/img/Wishing/cat-fortune-form.png';
+formCat.src = '/assets/img/Wishing/cat-fortune-form.png';
 formCat.className = 'cat-fortune-form';
 formWish.appendChild(formCat);
 const formInput = document.createElement('textarea');
@@ -138,10 +138,10 @@ formInput.setAttribute('rows', '5');
 formInput.setAttribute('cols', '50');
 formInput.setAttribute('class', 'form-input');
 formInput.setAttribute('placeholder', 'Nhập nguyện ước của bạn tại đây...');
-const formSubmit = document.createElement('input');
-formSubmit.setAttribute('type', 'submit');
+const formSubmit = document.createElement('button');
+formSubmit.setAttribute('type', 'button');
 formSubmit.setAttribute('class', 'form-submit');
-formSubmit.setAttribute('value', 'Ước nguyện');
+formSubmit.innerText = "Ước nguyện";
 formWish.appendChild(formSubmit);
 WishingContainer.appendChild(formWishContainer);
 
@@ -168,9 +168,9 @@ function fadeOut(el) {
 }
 
 //sakura-fall
-callSakuraFalling();
+// callSakuraFalling();
 
-const WishingStyle = document.createElement('style');
+export const WishingStyle = document.createElement('style');
 document.head.appendChild(WishingStyle);
 WishingStyle.innerHTML = `
     body {
@@ -182,6 +182,8 @@ WishingStyle.innerHTML = `
         overflow: hidden;
     }
     .wishing-container {
+        position: absolute;
+        top: 0;
         width: 100%;
         height: 100%;
         background: #EDB46A;
@@ -192,14 +194,11 @@ WishingStyle.innerHTML = `
     }
     .left-container {
         position: relative;
-        top: 0;
+        top: 0.05em;
     }
     .ribbon-left, .firework-left, .lantern-3, .lantern-2  {
         position: absolute;
-        top: 0;
-    }
-    .firework-left, .lantern-3, .lantern-2 {
-        position: absolute;
+        top: 0.05em;
     }
     .firework-left {
         top: 6.7em;
@@ -227,6 +226,7 @@ WishingStyle.innerHTML = `
     }
     .lantern-center-div {
         position: absolute;
+        top: 0;
         width: 14em;
         perspective: 12em;
         perspective-origin: top right;
@@ -268,10 +268,12 @@ WishingStyle.innerHTML = `
         left: 50%;
         transform: translate(-50%, 16%);
         width: 580px;
+        top: 0;
     }
     .sakura-center {
         position: absolute;
         left: 50%;
+        top: 0;
         transform: translate(-50%, 14%);
         width: 580px;
     }
@@ -382,7 +384,7 @@ WishingStyle.innerHTML = `
     }
     .form-submit {
         position: absolute;
-        top: 80%;
+        top: 85%;
         left: 50%;
         transform: translate(-50%, -50%);
         background: #FDE726;
@@ -426,7 +428,23 @@ WishingStyle.innerHTML = `
         opacity: 0;
         transition: opacity 600ms;
     }
+    .fade-in {
+        animation: fadeIn 1s;
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
 
+    @media only screen and (max-width: 920px) {
+        .form-wish {
+            width: 85%;
+        }
+    }
     @media only screen and (max-width: 500px) {
         .circle {
             width: 300px;
@@ -468,6 +486,9 @@ WishingStyle.innerHTML = `
         }
         .new-money-red {
             display: none;
+        }
+        .form-wish {
+            width: 90%;
         }
     }
     @media only screen and (max-width: 290px) {
