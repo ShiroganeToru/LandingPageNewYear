@@ -1,13 +1,7 @@
 import { fadeIn, fadeOut } from "./fireworks.js";
-// import {fireworksContainer, FireworksStyle } from "./fireworks.js";
-// import {PagodaContainer, PagodaStyle} from "./pagoda.js";
-// import {WishingContainer, WishingStyle} from "./wishing.js";
 const style = document.createElement('style');
 document.body.appendChild(style);
 style.innerHTML = `
-    body {
-        
-    }
     .btn-lft, .btn-rgt {
         width: 4em;
         border: none;
@@ -60,34 +54,23 @@ function scriptLoader(id, path, callback) {
     }
 }
 
-function scriptRemove2(id) {
+function scriptRemove(id) {
     const rms = document.getElementById(id);
     rms.remove();
     const x = document.getElementsByTagName("section")[0];
     document.body.removeChild(x);
 }
 
-function scriptRemove(id) {
-    const rms = document.getElementById(id);
-    rms.remove();
-}
-
 const slidePage = [
     {
-        // container: fireworksContainer,
-        // style: FireworksStyle,
         path: "/Components/fireworks.js",
         id: "script1",
     },
     {
-        // container: PagodaContainer,
-        // style: PagodaStyle,
         path: "/Components/pagoda.js",
         id: "script2",
     },
     {
-        // container: PagodaContainer,
-        // style: PagodaStyle,
         path: "/Components/wishing.js",
         id: "script3",
     },
@@ -111,26 +94,14 @@ slide.appendChild(slideContent);
 const startSlider = () => {
     scriptLoader(slidePage[0].id, slidePage[0].path);
 };
-function PageFadeIn(PageContainer, PageStyle) {
-    document.body.appendChild(PageContainer);
-    document.head.appendChild(PageStyle);
-    PageContainer.classList.add("fade-in");
-}
-function PageFadeOut(PageContainer, PageStyle) {
-    document.body.removeChild(PageContainer);
-    document.head.removeChild(PageStyle);
-}
 
 btnRgt.addEventListener("click", function() {
     if (slideCounter === slidePage.length - 2) {
         btnRgt.style.display = "none";
     }
-    scriptRemove2(slidePage[slideCounter].id);
-    console.log(slidePage[slideCounter].path);
+    scriptRemove(slidePage[slideCounter].id);
     scriptLoader(slidePage[slideCounter + 1].id, slidePage[slideCounter + 1].path);
-    console.log(slideCounter);
     slideCounter++;
-    console.log(slideCounter);
 })
 
 // btnLft.addEventListener("click", function() {

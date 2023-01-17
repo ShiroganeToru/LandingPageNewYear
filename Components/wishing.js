@@ -1,4 +1,4 @@
-// import callSakuraFalling from "./sakurafall.js";
+import callSakuraFalling from "./sakurafall.js";
 
 export const WishingContainer = document.createElement('section');
 WishingContainer.setAttribute('class', 'wishing-container');
@@ -168,7 +168,7 @@ function fadeOut(el) {
 }
 
 //sakura-fall
-// callSakuraFalling();
+callSakuraFalling();
 
 export const WishingStyle = document.createElement('style');
 document.head.appendChild(WishingStyle);
