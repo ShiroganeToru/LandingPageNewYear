@@ -7,10 +7,6 @@ const CountdownLayout = document.createElement('div');
 CountdownLayout.setAttribute('class','countdown-layout');
 CountdownContainer.appendChild(CountdownLayout);
 
-const SceneBackground = document.createElement('div');
-SceneBackground.setAttribute('class','scene');
-CountdownLayout.appendChild(SceneBackground);
-
 const CountdownDay = document.createElement('div');
 CountdownDay.setAttribute('class','number');
 CountdownLayout.appendChild(CountdownDay);
@@ -55,6 +51,10 @@ const CountdownSecondText = document.createElement('span');
 CountdownSecondText.innerText = "Giây";
 CountdownSecond.appendChild(CountdownSecondText);
 
+const SceneBackground = document.createElement('div');
+SceneBackground.setAttribute('class','scene');
+CountdownLayout.appendChild(SceneBackground);
+
 // CSS Style
 const CountdownStyle = document.createElement('style');
 CountdownStyle.innerHTML = `
@@ -76,9 +76,7 @@ CountdownStyle.innerHTML = `
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 20px;
-
-        background: linear-gradient(#111425,#3751e0);
+        background: linear-gradient(#111425,#201E2C);
         background-attachment: fixed;
         overflow: hidden;
     }
@@ -97,8 +95,7 @@ CountdownStyle.innerHTML = `
     }
 
     .countdown-layout div p {
-        // color: #FFEC8A;
-        color: white;
+        color: #FFEC8A;
         width: 156px;
         
         font-style: normal;
@@ -109,8 +106,7 @@ CountdownStyle.innerHTML = `
     }
 
     .countdown-layout div span {
-        // color: #FFEC8A;
-        color: white;
+        color: #FFEC8A;
         
         font-style: normal;
         font-weight: 700;
@@ -120,7 +116,7 @@ CountdownStyle.innerHTML = `
 
     .scene {
         position: relative;
-        left: -550px;;
+        left: -1390px;
         width: 100%;
         height: 100vh;
     }

@@ -93,7 +93,7 @@ GreetingContainer.appendChild(BackgroundPopup);
 
 const FormPopup = document.createElement('div');
 FormPopup.setAttribute('class','popup');
-GreetingContainer.appendChild(FormPopup);
+BackgroundPopup.appendChild(FormPopup);
 
 const FormTitle = document.createElement('h2');
 const FormTitleText = document.createTextNode("Trao gửi yêu thương");
@@ -116,17 +116,36 @@ RecipientInput.setAttribute('class','recipient-input');
 RecipientInput.setAttribute('placeholder','Bạn muốn gửi tới ai...');
 FormInput.appendChild(RecipientInput);
 
-const MessageInput = document.createElement('input');
+const MessageInput = document.createElement('textarea');
 MessageInput.setAttribute('type','text');
 MessageInput.setAttribute('class','message-input');
 MessageInput.setAttribute('placeholder','Nhập lời chúc ở đây...');
 FormInput.appendChild(MessageInput);
+
+const LimitFucntion = document.createElement('div');
+LimitFucntion.setAttribute('class','alert-frame');
+FormPopup.appendChild(LimitFucntion);
+
+const LimitChar = document.createElement('p');
+LimitChar.setAttribute('class','limit');
+LimitChar.innerText = "0/200";
+LimitFucntion.appendChild(LimitChar);
+
+const Alert = document.createElement('p');
+Alert.setAttribute('class','alert');
+Alert.innerText = "Không thể nhập quá 200 ký tự";
+LimitFucntion.appendChild(Alert);
 
 const ButtonConfirm = document.createElement('button');
 ButtonConfirm.setAttribute('type','button');
 ButtonConfirm.setAttribute('class','button-confirm')
 ButtonConfirm.innerText = "Tạo thiệp";
 FormPopup.appendChild(ButtonConfirm);
+
+const ButtonClose = new Image();
+ButtonClose.src = "/asset/Component/xmark-solid.svg";
+ButtonClose.setAttribute('class','close');
+FormPopup.appendChild(ButtonClose);
 
 const GreetingStyle = document.createElement('style');
 GreetingStyle.innerHTML = `
@@ -307,14 +326,15 @@ GreetingStyle.innerHTML = `
         height: 100vh;
         position: absolute;
         z-index: 9;
+
+        display: none;
+        align-items: center;
+        justify-content: center;
     }
     
     .popup {
         box-sizing: border-box;
 
-        position: absolute;
-        left: 25%;
-        top: 17.5%;
         width: 50%;
         height: 65%;
         z-index: 10;
@@ -371,6 +391,23 @@ GreetingStyle.innerHTML = `
         text-align: left;
     }
 
+    .alert-frame {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 850px;
+    }
+    
+    .alert {
+        display: none;
+        color: red;
+    }
+    
+    .limit {
+        color: white;
+    }
+
     .button-confirm {
         width: 160px;
         height: 40px;
@@ -384,6 +421,7 @@ GreetingStyle.innerHTML = `
         text-decoration: none;
         display: inline-block;
         cursor: pointer;
+        opacity: 1;
         
         font-family: 'Quicksand';
         font-style: normal;
@@ -392,9 +430,50 @@ GreetingStyle.innerHTML = `
         line-height: 30px;
     }
 
-    .show-form {
-        opacity: 1;
-        transition: opacity 700ms;
+    .close {
+        width: 30px;
+        height: 30px;
+
+        position: absolute;
+        top: 190px;
+        left: 1390px;
+
+        cursor: pointer;
     }
 `;
 document.head.appendChild(GreetingStyle);
+
+//Javascript Function
+
+//Popup
+document.querySelector(".button-popup").addEventListener("click", function(){
+    document.querySelector(".bg-popup").style.display = "flex";
+});
+
+document.querySelector(".close").addEventListener("click",function(){
+    document.querySelector(".bg-popup").style.display = "none";
+});
+
+//Limit Character
+var MyText = document.querySelector(".message-input");
+var Limit = document.querySelector(".limit");
+var Requirement = 200;
+Limit.textContent = 0 + "/" + 200;
+
+MyText.addEventListener("input", function(){
+    var textLength = MyText.value.length;
+    Limit.textContent = textLength + "/" + Requirement;
+
+    if (textLength > Requirement) {
+        document.querySelector(".alert").style.display = "inline";
+        Limit.style.color = "red";
+        document.querySelector(".button-confirm").style.cursor = "not-allowed";
+        document.querySelector(".button-confirm").style.opacity = "0.5";
+    }
+    else {
+        document.querySelector(".alert").style.display = "none";
+        Limit.style.color = "white";
+        document.querySelector(".button-confirm").style.cursor = "pointer";
+        document.querySelector(".button-confirm").style.opacity = "1";
+    }
+});
