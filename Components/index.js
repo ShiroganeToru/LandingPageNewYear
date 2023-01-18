@@ -1,4 +1,3 @@
-import { fadeIn, fadeOut } from "./fireworks.js";
 const style = document.createElement('style');
 document.body.appendChild(style);
 style.innerHTML = `
@@ -22,8 +21,8 @@ style.innerHTML = `
         right: 1em;
     }
     .slide {
-        width: 100%;
-        height: 100vh;
+        // width: 100%;
+        // height:;
     }
     .fade-in {
         animation: fadeIn 1s;
@@ -63,16 +62,32 @@ function scriptRemove(id) {
 
 const slidePage = [
     {
-        path: "/Components/fireworks.js",
+        path: "/Components/Countdown.js",
         id: "script1",
     },
     {
-        path: "/Components/pagoda.js",
+        path: "/Components/LoadingPage.js",
         id: "script2",
     },
     {
-        path: "/Components/wishing.js",
+        path: "/Components/fireworks.js",
         id: "script3",
+    },
+    {
+        path: "/Components/Mainpage.js",
+        id: "script4",
+    },
+    {
+        path: "/Components/pagoda.js",
+        id: "script5",
+    },
+    {
+        path: "/Components/wishing.js",
+        id: "script6",
+    },
+    {
+        path: "/Components/GreetingCard.js",
+        id: "script7",
     },
 ];
 let slideCounter = 0;

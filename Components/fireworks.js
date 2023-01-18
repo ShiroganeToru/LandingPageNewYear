@@ -13,7 +13,6 @@ FireworksStyle.innerHTML = `
         font-family: sans-serif;
     }
     #fw-canvas {
-        // background: #d20000;
         width: 100%;
     }
     .text-container {
@@ -57,17 +56,6 @@ FireworksStyle.innerHTML = `
     .show {
         opacity: 1;
         transition: opacity 300ms;
-    }
-    .fade-in {
-        animation: fadeIn 1s;
-    }
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
     }
     @media only screen and (max-width: 1100px) {
         .happy-new-year-text {
@@ -117,7 +105,6 @@ FireworksStyle.innerHTML = `
 document.head.appendChild(FireworksStyle);
 
 window.addEventListener('resize', resizeFireWorksCanvas, false);
-waitCountDown();
 window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || 
 function (callback) {
     window.setTimeout(callback, 1000/60);
@@ -126,21 +113,16 @@ function (callback) {
 var fCanvas, fCtx, w, h, fParticles = [], fProbability = 0.04, fxPoint, fyPoint;
 
 export function waitCountDown() {
-    setTimeout(fwLoad, 3000);
-    setTimeout(playHappyNewYearAudio, 3000);
-    setTimeout(audioPlayHover, 3000);
-    setTimeout(addText, 4000);
+    fwLoad();
+    playHappyNewYearAudio();
+    audioPlayHover();
+    addText();
 }
 
 function addText() {
     happyNewYearText.classList.add("show");
     yearText.classList.add("show");
     descriptionNewYear.classList.add("show");
-}
-function removeText() {
-    happyNewYearText.classList.remove("show");
-    yearText.classList.remove("show");
-    descriptionNewYear.classList.remove("show");
 }
 function playHappyNewYearAudio() {
     const happyNewYearAudio = new Audio('/assets/audio/happy_new_year_audio.mp3');
@@ -264,13 +246,4 @@ textContainer.appendChild(yearText);
 textContainer.appendChild(happyNewYearText);
 textContainer.appendChild(descriptionNewYear);
 fireworksContainer.appendChild(textContainer);
-
-export function fadeIn() {
-    fireworksContainer.classList.add("fade-in");
-}
-export function fadeOut() {
-        fireworksContainer.classList.remove("fade-in");
-        fireworksContainer.style.opacity = "0";
-        fireworksContainer.style.display = "none";
-        FireworksStyle.remove();
-}
+waitCountDown();

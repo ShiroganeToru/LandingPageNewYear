@@ -234,13 +234,14 @@ PagodaStyle.innerHTML = `
     .cat-container {
         position: absolute;
         z-index: 6;
-        left: 1%;
-        top: 60%;
+        left: 5px;
+        top: 20%;
     }
     .cat {
         position: relative;
         width: 15em;
         z-index: 6;
+        left: 0;
     }
     .fortune {
         position: absolute;
@@ -358,7 +359,10 @@ PagodaStyle.innerHTML = `
         .button-pray-div {
             top: 80%;
         }
-        .cat-container, .fortune {
+        .cat-container {
+            top: 30%;
+        }
+        .fortune {
             top: 70%;
         }
         .hand-pray-div {
@@ -369,7 +373,11 @@ PagodaStyle.innerHTML = `
         .button-pray-div {
             top: 90%;
         }
-        .cat-container, .fortune {
+        
+        .cat-container {
+            top: 10%;
+        }
+        .fortune {
             top: 60%;
         }
         .hand-pray-div {
@@ -394,6 +402,9 @@ PagodaStyle.innerHTML = `
         }
     }
     @media only screen and (max-width: 913px) {
+        .cat-container {
+            top: 37%;
+        }
         .button-pray-div {
             top: 50%;
         }
@@ -402,6 +413,9 @@ PagodaStyle.innerHTML = `
         }
     }
     @media only screen and (max-width: 900px) {
+        .cat-container {
+            top: 33%;
+        }
         .pagoda {
             width: 400px;
             height: 380px;
@@ -412,6 +426,9 @@ PagodaStyle.innerHTML = `
         }
     }
     @media only screen and (max-width: 840px) {
+        .cat-container {
+            top: 33%;
+        }
         .pagoda {
             width: 380px;
             height: 360px;
@@ -422,6 +439,9 @@ PagodaStyle.innerHTML = `
         }
     }
     @media only screen and (max-width: 769px) {
+        .cat-container {
+            top: 28%;
+        }
         .button-pray-div {
             top: 60%;
         }
@@ -550,7 +570,11 @@ PagodaStyle.innerHTML = `
         .button-pray-div {
             top: 70%;
         }
-        .cat-container, .fortune {
+        
+        .cat-container {
+            top: 30%;
+        }
+        .fortune {
             top: 75%;
         }
     }
@@ -575,7 +599,10 @@ PagodaStyle.innerHTML = `
         }
     }
     @media only screen and (max-width: 415px) {
-        .cat-container, .fortune {
+        .cat-container {
+            top: 38%;
+        }
+        .fortune {
             top: 75%;
         }
         .button-pray-div {
@@ -586,7 +613,10 @@ PagodaStyle.innerHTML = `
         }
     }
     @media only screen and (max-width: 412px) {
-        .cat-container, .fortune {
+        .cat-container {
+            top: 38%;
+        }
+        .fortune {
             top: 75%;
         }
         .button-pray-div {
@@ -642,7 +672,11 @@ PagodaStyle.innerHTML = `
             top: 2em;
             right: 5em;
         }
-        .cat-container, .fortune-pray-div {
+        .cat-container {
+            left: 50%;
+            top: 30%;
+        }
+        .fortune-pray-div {
             top: 70%;
             left: 50%;
         }
