@@ -3,67 +3,67 @@ GreetingContainer.setAttribute('class', 'greeting-container');
 document.body.appendChild(GreetingContainer);
 
 const ground = new Image();
-ground.src = "/asset/Component/Vector 2.png";
+ground.src = "/assets/img/Vector 2.png";
 ground.setAttribute('class','surface');
 GreetingContainer.appendChild(ground);
 
 const LanternString = new Image();
-LanternString.src = "/asset/Component/Vector 1.png";
+LanternString.src = "/assets/img/Vector 1.png";
 LanternString.setAttribute('class','lantern-string');
 GreetingContainer.appendChild(LanternString);
 
 const LanternSmall = new Image();
-LanternSmall.src = "/asset/Component/Artboard 32.png";
+LanternSmall.src = "/assets/img/Artboard 32.png";
 LanternSmall.setAttribute('class','lantern-small');
 GreetingContainer.appendChild(LanternSmall);
 
 const LanternMedium = new Image();
-LanternMedium.src = "/asset/Component/Artboard 32.png";
+LanternMedium.src = "/assets/img/Artboard 32.png";
 LanternMedium.setAttribute('class','lantern-medium');
 GreetingContainer.appendChild(LanternMedium);
 
 const LanternLarge = new Image();
-LanternLarge.src = "/asset/Component/Artboard 32.png";
+LanternLarge.src = "/assets/img/Artboard 32.png";
 LanternLarge.setAttribute('class','lantern-large');
 GreetingContainer.appendChild(LanternLarge);
 
 const Bush1 = new Image();
-Bush1.src = "/asset/Component/Artboard 36 2.png";
+Bush1.src = "/assets/img/Artboard 36 2.png";
 Bush1.setAttribute('class','bush-dark1');
 GreetingContainer.appendChild(Bush1);
 
 const Bush2 = new Image();
-Bush2.src = "/asset/Component/Artboard 36 1.png";
+Bush2.src = "/assets/img/Artboard 36 1.png";
 Bush2.setAttribute('class','bush-dark2');
 GreetingContainer.appendChild(Bush2);
 
 const Bush3 = new Image();
-Bush3.src = "/asset/Component/Artboard 39 1.png";
+Bush3.src = "/assets/img/Artboard 39 1.png";
 Bush3.setAttribute('class','bush-light1');
 GreetingContainer.appendChild(Bush3);
 
 const Bush4 = new Image();
-Bush4.src = "/asset/Component/Artboard 39 2.png";
+Bush4.src = "/assets/img/Artboard 39 2.png";
 Bush4.setAttribute('class','bush-light2');
 GreetingContainer.appendChild(Bush4);
 
 const Cat = new Image();
-Cat.src = "/asset/Cat/Artboard 15.png";
+Cat.src = "/assets/img/Cat/Artboard 15.png";
 Cat.setAttribute('class','cat');
 GreetingContainer.appendChild(Cat);
 
 const Coin1 = new Image();
-Coin1.src = "/asset/Component/Artboard 35.png";
+Coin1.src = "/assets/img/Artboard 35.png";
 Coin1.setAttribute('class','coin1');
 GreetingContainer.appendChild(Coin1);
 
 const Coin2 = new Image();
-Coin2.src = "/asset/Component/Artboard 35.png";
+Coin2.src = "/assets/img/Artboard 35.png";
 Coin2.setAttribute('class','coin2');
 GreetingContainer.appendChild(Coin2);
 
 const KiteFirework = new Image();
-KiteFirework.src = "/asset/Component/Artboard 33.png";
+KiteFirework.src = "/assets/img/Artboard 33.png";
 KiteFirework.setAttribute('class','kite-firework');
 GreetingContainer.appendChild(KiteFirework);
 
@@ -143,7 +143,7 @@ ButtonConfirm.innerText = "Tạo thiệp";
 FormPopup.appendChild(ButtonConfirm);
 
 const ButtonClose = new Image();
-ButtonClose.src = "/asset/Component/xmark-solid.svg";
+ButtonClose.src = "/assets/img/xmark-solid.svg";
 ButtonClose.setAttribute('class','close');
 FormPopup.appendChild(ButtonClose);
 
@@ -158,12 +158,16 @@ GreetingStyle.innerHTML = `
 
     body {
         background: #FFDEAB;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
     }
 
     .greeting-container {
         width: 100%;
         height: 100vh;
-
+        position: absolute;
+        top: 0;
         display: flex;
         align-items: center;
         flex-direction: column;

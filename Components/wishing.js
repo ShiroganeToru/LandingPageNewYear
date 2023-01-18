@@ -404,7 +404,7 @@ WishingStyle.innerHTML = `
     .form-input {
         position: absolute;
         width: 80%;
-        height: 80px;
+        height: 115px;
         border: none;
         top: 53%;
         left: 50%;

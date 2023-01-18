@@ -53,7 +53,7 @@ CountdownSecond.appendChild(CountdownSecondText);
 
 const SceneBackground = document.createElement('div');
 SceneBackground.setAttribute('class','scene');
-CountdownLayout.appendChild(SceneBackground);
+CountdownContainer.appendChild(SceneBackground);
 
 // CSS Style
 const CountdownStyle = document.createElement('style');
@@ -67,23 +67,30 @@ CountdownStyle.innerHTML = `
 
     body {
         background: #201E2C;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
     }
 
     .countdown-container {
         width: 100%;
         height: 100vh;
-
+        position: absolute;
+        top: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(#111425,#201E2C);
+        // background: linear-gradient(#111425,#201E2C);
         background-attachment: fixed;
-        overflow: hidden;
     }
 
     .countdown-layout {
+        position: absolute;
+        top: 0;
+        bottom: 0;
         display: flex;
         flex-direction: row;
+        justify-content: center;
         gap: 50px;
     }
 
@@ -115,10 +122,6 @@ CountdownStyle.innerHTML = `
     }
 
     .scene {
-        position: relative;
-        left: -1390px;
-        width: 100%;
-        height: 100vh;
     }
     
     .scene i {
@@ -130,27 +133,27 @@ CountdownStyle.innerHTML = `
 document.head.appendChild(CountdownStyle);
 
 // JavaScript Function
-var CountdownDate = new Date("Jan 22, 2023 00:00:00").getTime();
-var x = setInterval(function(){
-    var now = new Date().getTime();
-    var distance = CountdownDate- now;
+const CountdownDate = new Date("Jan 22, 2023 00:00:00").getTime();
+const x = setInterval(function(){
+    const now = new Date().getTime();
+    const distance = CountdownDate- now;
 
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
+    CountdownDayDisplay.innerText = "" + days;
+    CountdownHourDisplay.innerText = "" + hours;
+    CountdownMinuteDisplay.innerText = "" + minutes;
+    CountdownSecondDisplay.innerText = "" + seconds;
 
     if(distance < 0) {
         clearInterval(x);
-        document.getElementById("days").innerHTML = "00";
-        document.getElementById("hours").innerHTML = "00";
-        document.getElementById("minutes").innerHTML = "00";
-        document.getElementById("seconds").innerHTML = "00";
+        CountdownDayDisplay.innerText = "00";
+        CountdownHourDisplay.innerText = "00";
+        CountdownMinuteDisplay.innerText = "00";
+        CountdownSecondDisplay.innerText = "00";
     }
 },1000);
 
@@ -168,8 +171,8 @@ function star() {
 
         star.style.left = x + 'px';
         star.style.top = y + 'px';
-        star.style.width = 1 + size + 'px';
-        star.style.height = 1 + size + 'px';
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
 
         scene.appendChild(star);
         i++;
