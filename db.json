@@ -1,0 +1,304 @@
+{
+  "buds": [
+      {
+          "id": "1",
+          "description": "Bây giờ tình mới rõ tình, \\nThôi thôi đã mắc vào vành chẳng sai. \\nChước đâu có chước lạ đời? \\nNgười đâu mà lại có người tinh ma?",
+          "status": "Good"
+      },
+      {
+          "id": "2",
+          "description": "Thông minh vốn sẵn tính trời\\nNhẹ nhàng nghiệp trước, đền bồi duyên sau",
+          "status": "Good"
+      },
+      {
+          "id": "3",
+          "description": "Tan sương vừa rạng ngày mai\\nTrụ trì nghe tiếng vội mời vào trong",
+          "status": "Good"
+      },
+      {
+          "id": "4",
+          "description": "Nâu sồng từ trở màu thiền\\nMặn khen nét bút càng nhìn càng tươi",
+          "status": "Good"
+      },
+      {
+          "id": "5",
+          "description": "Bây giờ rõ mặt đôi ta\\nTu là cội phúc, tình là dây oan",
+          "status": "Good"
+      },
+      {
+          "id": "6",
+          "description": "Song thu đã khép cánh ngoài\\nHay là khổ tận đến ngày cam lai?",
+          "status": "Good"
+      },
+      {
+          "id": "7",
+          "description": "Bấy lâu mới được một ngày\\nNgọn đèn khêu nguyệt, tiếng chày nện sương",
+          "status": "Good"
+      },
+      {
+          "id": "8",
+          "description": "Cho hay giọt nước cành dương\\nTúc khiên đã rửa lâng lâng sạch rồi",
+          "status": "Good"
+      },
+      {
+          "id": "9",
+          "description": "Tấm thân rày đã nhẹ nhàng\\nThanh thiên bạch nhật rõ ràng cho coi",
+          "status": "Good"
+      },
+      {
+          "id": "10",
+          "description": "Thương sao cho vẹn thì thương\\nLòng đây lòng đấy chưa tường hay sao?",
+          "status": "Good"
+      },
+      {
+          "id": "11",
+          "description": "Thương sao cho vẹn thì thương\\nLửa lòng tưới tắt mọi đường trần duyên",
+          "status": "Good"
+      },
+      {
+          "id": "12",
+          "description": "Phật tiền ngày bạc lân la\\nTương tri dường ấy mới là tương tri",
+          "status": "Good"
+      },
+      {
+          "id": "13",
+          "description": "Nghìn tầm nhờ bóng tùng quân\\nã tin điều trước ắt nhằm việc sau",
+          "status": "Good"
+      },
+      {
+          "id": "14",
+          "description": "Đã nguyền hai chữ đồng tâm\\nAi lay chẳng chuyển ai rung chẳng rời",
+          "status": "Good"
+      },
+      {
+          "id": "15",
+          "description": "Đã nên có nghĩa có nhân\\nVẻ non xa, tấm trăng gần ở chung",
+          "status": "Good"
+      },
+      {
+          "id": "16",
+          "description": "Đề huề lưng túi gió trăng\\nAi lay chẳng chuyển ai rung chẳng rời",
+          "status": "Good"
+      },
+      {
+          "id": "17",
+          "description": "Gương trong chẳng chút bụi trần\\nThói nhà băng tuyết, chất hằng phỉ phong",
+          "status": "Good"
+      },
+      {
+          "id": "18",
+          "description": "Nâu sồng từ trở màu thiền\\nTìm đâu thì cũng biết tin rõ ràng",
+          "status": "Good"
+      },
+      {
+          "id": "19",
+          "description": "Thương nhau xin nhớ lời nhau\\nCơ duyên nào đã hết đâu vội gì?",
+          "status": "Good"
+      },
+      {
+          "id": "20",
+          "description": "Song hồ nửa khép cánh mây\\nHoa chào ngõ hạnh, hương bay dặm phần",
+          "status": "Good"
+      },
+      {
+          "id": "21",
+          "description": "Dịp đâu may mắn lạ thường\\nSớm khuya tiếng hạc tiếng đàn tiêu dao",
+          "status": "Good"
+      },
+      {
+          "id": "22",
+          "description": "Tan sương vừa rạng ngày mai\\nHoa chào ngõ hạnh, hương bay dặm phần",
+          "status": "Good"
+      },
+      {
+          "id": "23",
+          "description": "Một người dễ có mấy thân \\nỞ đây hoặc có giai âm chăng là",
+          "status": "Good"
+      },
+      {
+          "id": "24",
+          "description": "Nghìn tầm nhờ bóng tùng quân\\nTrước sau trọn vẹn xa gần ngợi khen",
+          "status": "Good"
+      },
+      {
+          "id": "25",
+          "description": "Cùng nhau nương cửa Bồ Đề\\nVườn xuân một thửa, để bia muôn đời",
+          "status": "Good"
+      },
+      {
+          "id": "26",
+          "description": "Ngày xuân em hãy còn dài\\nMừng nào lại quá mừng này nữa chăng?",
+          "status": "Good"
+      },
+      {
+          "id": "27",
+          "description": "Trông người lại ngẫm đến ta \\nTu là cội phúc, tình là dây oan",
+          "status": "Good"
+      },
+      {
+          "id": "28",
+          "description": "Thiền trà cạn nước hồng mai\\nNhờ tay tế độ, vớt người trầm luân",
+          "status": "Good"
+      },
+      {
+          "id": "29",
+          "description": "Trong như tiếng hạc bay qua\\nDường gần rừng tía, dường xa bụi hồng",
+          "status": "Good"
+      },
+      {
+          "id": "30",
+          "description": "Vầng trăng vằng vặc giữa trời\\nNhẹ nhàng nghiệp trước đền bồi duyên sau",
+          "status": "Good"
+      },
+      {
+          "id": "31",
+          "description": "Thuyền vừa đỗ bến thảnh thơi\\nBiết đường khinh trọng, biết lời phải chăng",
+          "status": "Good"
+      },
+      {
+          "id": "32",
+          "description": "Hoa cười ngọc thốt đoan trang\\nLòng kia giữ được thường thường mãi không?",
+          "status": "Good"
+      },
+      {
+          "id": "33",
+          "description": "Thông minh vốn sẵn tính trời\\nMà trong lẽ phải, có người có ta",
+          "status": "Good"
+      },
+      {
+          "id": "34",
+          "description": "Vầng trăng vằng vặc giữa trời\\nCội nguồn cũng ở lòng người mà ra",
+          "status": "Good"
+      },
+      {
+          "id": "35",
+          "description": "So dần giây vũ giây văn\\nHương đèn việc cũ, trai phòng quen tay",
+          "status": "Good"
+      },
+      {
+          "id": "36",
+          "description": "Được lời như cởi tấm lòng\\nĐã tin điều trước ắt nhằm việc sau",
+          "status": "Good"
+      },
+      {
+          "id": "37",
+          "description": "Long lanh đáy nước in trời\\nHoa đào năm ngoái còn cười gió đông",
+          "status": "Good"
+      },
+      {
+          "id": "38",
+          "description": "Tạ lòng lạy trước sân mây\\nMuối dưa đắp đổi tháng ngày thong dong",
+          "status": "Good"
+      },
+      {
+          "id": "39",
+          "description": "Nẻo xa mới tỏ mặt người\\nDuyên ta mà cũng phúc trời chi không",
+          "status": "Good"
+      },
+      {
+          "id": "40",
+          "description": "Dẫu rằng vật đổi sao dời\\nCòn vầng trăng bạc, còn lời nguyền xưa",
+          "status": "Good"
+      },
+      {
+          "id": "41",
+          "description": "Những là rày ước mai ao \\nDưới dày có đất trên cao có trời",
+          "status": "Good"
+      },
+      {
+          "id": "42",
+          "description": "Lấy tình thâm trả nghĩa thâm\\nMột lời quyết hẳn muôn phần kính thêm",
+          "status": "Good"
+      },
+      {
+          "id": "43",
+          "description": "Nghe tin nở mặt nở mày\\nHoa chào ngõ hạnh hương bay dặm phần",
+          "status": "Good"
+      },
+      {
+          "id": "44",
+          "description": "Áo xanh đổi lấy cà sa\\nChữ tâm kia mới bằng ba chữ tài",
+          "status": "Good"
+      },
+      {
+          "id": "45",
+          "description": "Khen cho con mắt tinh đời\\nNon vàng chưa dễ đền bồi tấm thương",
+          "status": "Good"
+      },
+      {
+          "id": "46",
+          "description": "Cửa sài vừa ngỏ then hoa\\nNhớ lời nói những bao giờ hay không?",
+          "status": "Good"
+      },
+      {
+          "id": "47",
+          "description": "Mấy lời tâm phúc ruột rà\\nTừng cay đắng lại mặn mà hơn xưa",
+          "status": "Good"
+      },
+      {
+          "id": "48",
+          "description": "Lòng còn gửi áng mây vàng\\nThênh thênh đường cái thanh vân hẹp gì",
+          "status": "Good"
+      },
+      {
+          "id": "49",
+          "description": "Đã gần chi có điều xa\\nTu là cội phúc tình là dây oan",
+          "status": "Good"
+      },
+      {
+          "id": "50",
+          "description": "Thửa công đức ấy ai bằng\\nCòn chen vào chốn bụi hồng làm chi?",
+          "status": "Good"
+      },
+      {
+          "id": "51",
+          "description": "Năm mây bỗng thấy chiếu trời\\nNào lời non nước, nào lời sắt son",
+          "status": "Good"
+      },
+      {
+          "id": "52",
+          "description": "Gió quang mây tạnh thảnh thơi\\nBể oan dường đã vơi vơi cạnh lòng",
+          "status": "Good"
+      },
+      {
+          "id": "53",
+          "description": "Một lòng chẳng quản mấy công\\nTriều dâng hôm sớm mây lồng trước sau",
+          "status": "Good"
+      },
+      {
+          "id": "55",
+          "description": "Kệ kinh câu cũ thuộc lòng\\nTấn Dương được thấy mây rồng có phen",
+          "status": "Good"
+      },
+      {
+          "id": "55",
+          "description": "Trời đông vừa rạng ngàn dâu\\nDuyên xưa chưa dễ biết đâu chốn này",
+          "status": "Good"
+      },
+      {
+          "id": "56",
+          "description": "Lấy trong ý tứ mà suy\\nSao cho thoát khỏi nữ nhi thường tình",
+          "status": "Good"
+      },
+      {
+          "id": "57",
+          "description": "Công tư vẹn cả hai bề\\nChuyện muôn năm cũ kể chi bây giờ?",
+          "status": "Good"
+      },
+      {
+          "id": "58",
+          "description": "Sự đời đã tắt lửa lòng\\nSen vàng lãng đãng như gần như xa",
+          "status": "Good"
+      },
+      {
+          "id": "59",
+          "description": "Bây giờ tình mới tỏ tình\\nThôi thì dẹp nỗi bất bình là xong!",
+          "status": "Good"
+      },
+      {
+          "id": "60",
+          "description": "Cửa trời rộng mở đường mây\\nSao cho trong ấm thì ngoài mới êm",
+          "status": "Good"
+      }
+  ]
+}
