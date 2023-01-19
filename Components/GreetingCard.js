@@ -1,153 +1,155 @@
-const GreetingContainer = document.createElement('section');
-GreetingContainer.setAttribute('class', 'greeting-container');
+const GreetingContainer = document.createElement("section");
+GreetingContainer.setAttribute("class", "greeting-container");
 document.body.appendChild(GreetingContainer);
 
 const ground = new Image();
 ground.src = "/assets/img/Vector 2.png";
-ground.setAttribute('class','surface');
+ground.setAttribute("class", "surface");
 GreetingContainer.appendChild(ground);
 
 const LanternString = new Image();
 LanternString.src = "/assets/img/Vector 1.png";
-LanternString.setAttribute('class','lantern-string');
+LanternString.setAttribute("class", "lantern-string");
 GreetingContainer.appendChild(LanternString);
 
 const LanternSmall = new Image();
 LanternSmall.src = "/assets/img/Artboard 32.png";
-LanternSmall.setAttribute('class','lantern-small');
+LanternSmall.setAttribute("class", "lantern-small");
 GreetingContainer.appendChild(LanternSmall);
 
 const LanternMedium = new Image();
 LanternMedium.src = "/assets/img/Artboard 32.png";
-LanternMedium.setAttribute('class','lantern-medium');
+LanternMedium.setAttribute("class", "lantern-medium");
 GreetingContainer.appendChild(LanternMedium);
 
 const LanternLarge = new Image();
 LanternLarge.src = "/assets/img/Artboard 32.png";
-LanternLarge.setAttribute('class','lantern-large');
+LanternLarge.setAttribute("class", "lantern-large");
 GreetingContainer.appendChild(LanternLarge);
 
 const Bush1 = new Image();
 Bush1.src = "/assets/img/Artboard 36 2.png";
-Bush1.setAttribute('class','bush-dark1');
+Bush1.setAttribute("class", "bush-dark1");
 GreetingContainer.appendChild(Bush1);
 
 const Bush2 = new Image();
 Bush2.src = "/assets/img/Artboard 36 1.png";
-Bush2.setAttribute('class','bush-dark2');
+Bush2.setAttribute("class", "bush-dark2");
 GreetingContainer.appendChild(Bush2);
 
 const Bush3 = new Image();
 Bush3.src = "/assets/img/Artboard 39 1.png";
-Bush3.setAttribute('class','bush-light1');
+Bush3.setAttribute("class", "bush-light1");
 GreetingContainer.appendChild(Bush3);
 
 const Bush4 = new Image();
 Bush4.src = "/assets/img/Artboard 39 2.png";
-Bush4.setAttribute('class','bush-light2');
+Bush4.setAttribute("class", "bush-light2");
 GreetingContainer.appendChild(Bush4);
 
 const Cat = new Image();
 Cat.src = "/assets/img/Cat/Artboard 15.png";
-Cat.setAttribute('class','cat');
+Cat.setAttribute("class", "cat");
 GreetingContainer.appendChild(Cat);
 
 const Coin1 = new Image();
 Coin1.src = "/assets/img/Artboard 35.png";
-Coin1.setAttribute('class','coin1');
+Coin1.setAttribute("class", "coin1");
 GreetingContainer.appendChild(Coin1);
 
 const Coin2 = new Image();
 Coin2.src = "/assets/img/Artboard 35.png";
-Coin2.setAttribute('class','coin2');
+Coin2.setAttribute("class", "coin2");
 GreetingContainer.appendChild(Coin2);
 
 const KiteFirework = new Image();
 KiteFirework.src = "/assets/img/Artboard 33.png";
-KiteFirework.setAttribute('class','kite-firework');
+KiteFirework.setAttribute("class", "kite-firework");
 GreetingContainer.appendChild(KiteFirework);
 
-const Hny = document.createElement('h1');
+const Hny = document.createElement("h1");
 const HnyText = document.createTextNode("Tạo thiệp chúc");
-Hny.setAttribute('class','hny');
+Hny.setAttribute("class", "hny");
 Hny.appendChild(HnyText);
 GreetingContainer.appendChild(Hny);
 
-const distich = document.createElement('p');
-const distichText = document.createTextNode("Cung chúc tân xuân - Vạn sự như ý");
-distich.setAttribute('class','distich');
+const distich = document.createElement("p");
+const distichText = document.createTextNode(
+  "Cung chúc tân xuân - Vạn sự như ý"
+);
+distich.setAttribute("class", "distich");
 distich.appendChild(distichText);
 GreetingContainer.appendChild(distich);
 
-const buttonCreate = document.createElement('button');
-buttonCreate.setAttribute('class', 'button-popup');
-const buttonIcon = document.createElement('i');
-buttonIcon.setAttribute('class','fa-solid fa-play');
+const buttonCreate = document.createElement("button");
+buttonCreate.setAttribute("class", "button-popup");
+const buttonIcon = document.createElement("i");
+buttonIcon.setAttribute("class", "fa-solid fa-play");
 buttonCreate.appendChild(buttonIcon);
 buttonCreate.innerText = "Gửi lời chúc";
 GreetingContainer.appendChild(buttonCreate);
 
-const BackgroundPopup = document.createElement('div');
-BackgroundPopup.setAttribute('class','bg-popup');
+const BackgroundPopup = document.createElement("div");
+BackgroundPopup.setAttribute("class", "bg-popup");
 GreetingContainer.appendChild(BackgroundPopup);
 
-const FormPopup = document.createElement('div');
-FormPopup.setAttribute('class','popup');
+const FormPopup = document.createElement("div");
+FormPopup.setAttribute("class", "popup");
 BackgroundPopup.appendChild(FormPopup);
 
-const FormTitle = document.createElement('h2');
+const FormTitle = document.createElement("h2");
 const FormTitleText = document.createTextNode("Trao gửi yêu thương");
-FormTitle.setAttribute('class','form-title');
+FormTitle.setAttribute("class", "form-title");
 FormTitle.appendChild(FormTitleText);
 FormPopup.appendChild(FormTitle);
 
-const FormInput = document.createElement('form');
+const FormInput = document.createElement("form");
 FormPopup.appendChild(FormInput);
 
-const NameInput = document.createElement('input');
-NameInput.setAttribute('type','text');
-NameInput.setAttribute('class','name-input');
-NameInput.setAttribute('placeholder','Họ và tên của bạn...');
+const NameInput = document.createElement("input");
+NameInput.setAttribute("type", "text");
+NameInput.setAttribute("class", "name-input");
+NameInput.setAttribute("placeholder", "Họ và tên của bạn...");
 FormInput.appendChild(NameInput);
 
-const RecipientInput = document.createElement('input');
-RecipientInput.setAttribute('type','text');
-RecipientInput.setAttribute('class','recipient-input');
-RecipientInput.setAttribute('placeholder','Bạn muốn gửi tới ai...');
+const RecipientInput = document.createElement("input");
+RecipientInput.setAttribute("type", "text");
+RecipientInput.setAttribute("class", "recipient-input");
+RecipientInput.setAttribute("placeholder", "Bạn muốn gửi tới ai...");
 FormInput.appendChild(RecipientInput);
 
-const MessageInput = document.createElement('textarea');
-MessageInput.setAttribute('type','text');
-MessageInput.setAttribute('class','message-input');
-MessageInput.setAttribute('placeholder','Nhập lời chúc ở đây...');
+const MessageInput = document.createElement("textarea");
+MessageInput.setAttribute("type", "text");
+MessageInput.setAttribute("class", "message-input");
+MessageInput.setAttribute("placeholder", "Nhập lời chúc ở đây...");
 FormInput.appendChild(MessageInput);
 
-const LimitFucntion = document.createElement('div');
-LimitFucntion.setAttribute('class','alert-frame');
+const LimitFucntion = document.createElement("div");
+LimitFucntion.setAttribute("class", "alert-frame");
 FormPopup.appendChild(LimitFucntion);
 
-const LimitChar = document.createElement('p');
-LimitChar.setAttribute('class','limit');
+const LimitChar = document.createElement("p");
+LimitChar.setAttribute("class", "limit");
 LimitChar.innerText = "0/200";
 LimitFucntion.appendChild(LimitChar);
 
-const Alert = document.createElement('p');
-Alert.setAttribute('class','alert');
+const Alert = document.createElement("p");
+Alert.setAttribute("class", "alert");
 Alert.innerText = "Không thể nhập quá 200 ký tự";
 LimitFucntion.appendChild(Alert);
 
-const ButtonConfirm = document.createElement('button');
-ButtonConfirm.setAttribute('type','button');
-ButtonConfirm.setAttribute('class','button-confirm')
+const ButtonConfirm = document.createElement("button");
+ButtonConfirm.setAttribute("type", "button");
+ButtonConfirm.setAttribute("class", "button-confirm");
 ButtonConfirm.innerText = "Tạo thiệp";
 FormPopup.appendChild(ButtonConfirm);
 
 const ButtonClose = new Image();
 ButtonClose.src = "/assets/img/xmark-solid.svg";
-ButtonClose.setAttribute('class','close');
+ButtonClose.setAttribute("class", "close");
 FormPopup.appendChild(ButtonClose);
 
-const GreetingStyle = document.createElement('style');
+const GreetingStyle = document.createElement("style");
 GreetingStyle.innerHTML = `
     * {
         margin: 0;
@@ -450,12 +452,12 @@ document.head.appendChild(GreetingStyle);
 //Javascript Function
 
 //Popup
-document.querySelector(".button-popup").addEventListener("click", function(){
-    document.querySelector(".bg-popup").style.display = "flex";
+document.querySelector(".button-popup").addEventListener("click", function () {
+  document.querySelector(".bg-popup").style.display = "flex";
 });
 
-document.querySelector(".close").addEventListener("click",function(){
-    document.querySelector(".bg-popup").style.display = "none";
+document.querySelector(".close").addEventListener("click", function () {
+  document.querySelector(".bg-popup").style.display = "none";
 });
 
 //Limit Character
@@ -464,20 +466,19 @@ var Limit = document.querySelector(".limit");
 var Requirement = 200;
 Limit.textContent = 0 + "/" + 200;
 
-MyText.addEventListener("input", function(){
-    var textLength = MyText.value.length;
-    Limit.textContent = textLength + "/" + Requirement;
+MyText.addEventListener("input", function () {
+  var textLength = MyText.value.length;
+  Limit.textContent = textLength + "/" + Requirement;
 
-    if (textLength > Requirement) {
-        document.querySelector(".alert").style.display = "inline";
-        Limit.style.color = "red";
-        document.querySelector(".button-confirm").style.cursor = "not-allowed";
-        document.querySelector(".button-confirm").style.opacity = "0.5";
-    }
-    else {
-        document.querySelector(".alert").style.display = "none";
-        Limit.style.color = "white";
-        document.querySelector(".button-confirm").style.cursor = "pointer";
-        document.querySelector(".button-confirm").style.opacity = "1";
-    }
+  if (textLength > Requirement) {
+    document.querySelector(".alert").style.display = "inline";
+    Limit.style.color = "red";
+    document.querySelector(".button-confirm").style.cursor = "not-allowed";
+    document.querySelector(".button-confirm").style.opacity = "0.5";
+  } else {
+    document.querySelector(".alert").style.display = "none";
+    Limit.style.color = "white";
+    document.querySelector(".button-confirm").style.cursor = "pointer";
+    document.querySelector(".button-confirm").style.opacity = "1";
+  }
 });

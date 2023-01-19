@@ -93,8 +93,8 @@ function createMoneyRed(i) {
     newMoneyRed.style.left = xy[1] + 'px';
 }
 function getRandomPosition(moneyRed) {
-    let x = (MoneyRedContainer.offsetWidth/3)/3;
-    let y = (MoneyRedContainer.offsetWidth/3)/1.9;
+    let x = (MoneyRedContainer.offsetWidth / 3) / 3;
+    let y = (MoneyRedContainer.offsetWidth / 3) / 1.9;
     let randomX = Math.floor(Math.random() * x);
     let randomY = Math.floor(Math.random() * y);
     return [randomX, randomY];
@@ -143,20 +143,20 @@ formSubmit.innerText = "Ước nguyện";
 formWish.appendChild(formSubmit);
 WishingContainer.appendChild(formWishContainer);
 
-formSubmit.addEventListener("click", function() {
+formSubmit.addEventListener("click", function () {
     formInput.value = "";
 })
 
 // event click button wish
-buttonWish.onclick = function() {
+buttonWish.onclick = function () {
     fadeIn(formWish);
 }
 
-formSubmit.onclick = function() {
+formSubmit.onclick = function () {
     fadeOut(formWish);
 }
 
-formClose.onclick = function() {
+formClose.onclick = function () {
     fadeOut(formWish);
 }
 
@@ -186,7 +186,7 @@ const addSakura = () => {
     const sakuraFalling = () => {
         sakura.style.top = parseInt(sakura.style.top) + 2 + "px";
         sakura.style.right = parseInt(sakura.style.right) + 1 + "px";
-        if(parseInt(sakura.style.top) > screenHeight) {
+        if (parseInt(sakura.style.top) > screenHeight) {
             sakura.style.opacity = 0;
             sakura.style.transition = "opacity 500ms";
         }

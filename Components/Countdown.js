@@ -1,62 +1,62 @@
 // HTML Tag
-const CountdownContainer = document.createElement('section');
-CountdownContainer.setAttribute('class','countdown-container');
+const CountdownContainer = document.createElement("section");
+CountdownContainer.setAttribute("class", "countdown-container");
 document.body.appendChild(CountdownContainer);
 
-const CountdownLayout = document.createElement('div');
-CountdownLayout.setAttribute('class','countdown-layout');
+const CountdownLayout = document.createElement("div");
+CountdownLayout.setAttribute("class", "countdown-layout");
 CountdownContainer.appendChild(CountdownLayout);
 
-const CountdownDay = document.createElement('div');
-CountdownDay.setAttribute('class','number');
+const CountdownDay = document.createElement("div");
+CountdownDay.setAttribute("class", "number");
 CountdownLayout.appendChild(CountdownDay);
-const CountdownDayDisplay = document.createElement('p');
-CountdownDayDisplay.setAttribute('id','days');
+const CountdownDayDisplay = document.createElement("p");
+CountdownDayDisplay.setAttribute("id", "days");
 CountdownDayDisplay.innerText = "00";
 CountdownDay.appendChild(CountdownDayDisplay);
-const CountdownDayText = document.createElement('span');
+const CountdownDayText = document.createElement("span");
 CountdownDayText.innerText = "Ngày";
 CountdownDay.appendChild(CountdownDayText);
 
-const CountdownHour = document.createElement('div');
-CountdownHour.setAttribute('class','number');
+const CountdownHour = document.createElement("div");
+CountdownHour.setAttribute("class", "number");
 CountdownLayout.appendChild(CountdownHour);
-const CountdownHourDisplay = document.createElement('p');
-CountdownHourDisplay.setAttribute('id','hours');
+const CountdownHourDisplay = document.createElement("p");
+CountdownHourDisplay.setAttribute("id", "hours");
 CountdownHourDisplay.innerText = "00";
 CountdownHour.appendChild(CountdownHourDisplay);
-const CountdownHourText = document.createElement('span');
+const CountdownHourText = document.createElement("span");
 CountdownHourText.innerText = "Giờ";
 CountdownHour.appendChild(CountdownHourText);
 
-const CountdownMinute = document.createElement('div');
-CountdownMinute.setAttribute('class','number');
+const CountdownMinute = document.createElement("div");
+CountdownMinute.setAttribute("class", "number");
 CountdownLayout.appendChild(CountdownMinute);
-const CountdownMinuteDisplay = document.createElement('p');
-CountdownMinuteDisplay.setAttribute('id','minutes');
+const CountdownMinuteDisplay = document.createElement("p");
+CountdownMinuteDisplay.setAttribute("id", "minutes");
 CountdownMinuteDisplay.innerText = "00";
 CountdownMinute.appendChild(CountdownMinuteDisplay);
-const CountdownMinuteText = document.createElement('span');
+const CountdownMinuteText = document.createElement("span");
 CountdownMinuteText.innerText = "Phút";
 CountdownMinute.appendChild(CountdownMinuteText);
 
-const CountdownSecond = document.createElement('div');
-CountdownSecond.setAttribute('class','number');
+const CountdownSecond = document.createElement("div");
+CountdownSecond.setAttribute("class", "number");
 CountdownLayout.appendChild(CountdownSecond);
-const CountdownSecondDisplay = document.createElement('p');
-CountdownSecondDisplay.setAttribute('id','seconds');
+const CountdownSecondDisplay = document.createElement("p");
+CountdownSecondDisplay.setAttribute("id", "seconds");
 CountdownSecondDisplay.innerText = "00";
 CountdownSecond.appendChild(CountdownSecondDisplay);
-const CountdownSecondText = document.createElement('span');
+const CountdownSecondText = document.createElement("span");
 CountdownSecondText.innerText = "Giây";
 CountdownSecond.appendChild(CountdownSecondText);
 
-const SceneBackground = document.createElement('div');
-SceneBackground.setAttribute('class','scene');
+const SceneBackground = document.createElement("div");
+SceneBackground.setAttribute("class", "scene");
 CountdownContainer.appendChild(SceneBackground);
 
 // CSS Style
-const CountdownStyle = document.createElement('style');
+const CountdownStyle = document.createElement("style");
 CountdownStyle.innerHTML = `
     * {
         margin: 0;
@@ -134,49 +134,51 @@ document.head.appendChild(CountdownStyle);
 
 // JavaScript Function
 const CountdownDate = new Date("Jan 22, 2023 00:00:00").getTime();
-const x = setInterval(function(){
-    const now = new Date().getTime();
-    const distance = CountdownDate- now;
+const x = setInterval(function () {
+  const now = new Date().getTime();
+  const distance = CountdownDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    CountdownDayDisplay.innerText = "" + days;
-    CountdownHourDisplay.innerText = "" + hours;
-    CountdownMinuteDisplay.innerText = "" + minutes;
-    CountdownSecondDisplay.innerText = "" + seconds;
+  CountdownDayDisplay.innerText = "" + days;
+  CountdownHourDisplay.innerText = "" + hours;
+  CountdownMinuteDisplay.innerText = "" + minutes;
+  CountdownSecondDisplay.innerText = "" + seconds;
 
-    if(distance < 0) {
-        clearInterval(x);
-        CountdownDayDisplay.innerText = "00";
-        CountdownHourDisplay.innerText = "00";
-        CountdownMinuteDisplay.innerText = "00";
-        CountdownSecondDisplay.innerText = "00";
-    }
-},1000);
+  if (distance < 0) {
+    clearInterval(x);
+    CountdownDayDisplay.innerText = "00";
+    CountdownHourDisplay.innerText = "00";
+    CountdownMinuteDisplay.innerText = "00";
+    CountdownSecondDisplay.innerText = "00";
+  }
+}, 1000);
 
 function star() {
-    let count = 500;
-    let scene = document.querySelector('.scene');
-    let i = 0;
+  let count = 500;
+  let scene = document.querySelector(".scene");
+  let i = 0;
 
-    while (i < count) {
-        let star = document.createElement("i");
-        let x = Math.floor(Math.random() * window.innerWidth);
-        let y = Math.floor(Math.random() * window.innerHeight);
-        let duration = Math.random() * 10;
-        let size = Math.random() * 2;
+  while (i < count) {
+    let star = document.createElement("i");
+    let x = Math.floor(Math.random() * window.innerWidth);
+    let y = Math.floor(Math.random() * window.innerHeight);
+    let duration = Math.random() * 10;
+    let size = Math.random() * 2;
 
-        star.style.left = x + 'px';
-        star.style.top = y + 'px';
-        star.style.width = size + 'px';
-        star.style.height = size + 'px';
+    star.style.left = x + "px";
+    star.style.top = y + "px";
+    star.style.width = size + "px";
+    star.style.height = size + "px";
 
-        scene.appendChild(star);
-        i++;
-    }
+    scene.appendChild(star);
+    i++;
+  }
 }
 
 star();
