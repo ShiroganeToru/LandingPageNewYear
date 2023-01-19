@@ -1,207 +1,230 @@
 const LoadingPageContainer = document.createElement("section");
 LoadingPageContainer.setAttribute("class", "loading-page-container");
 document.body.appendChild(LoadingPageContainer);
-const LoadingContainer = document.createElement('div');
-LoadingContainer.setAttribute('class', 'loading-container');
+const LoadingContainer = document.createElement("div");
+LoadingContainer.setAttribute("class", "loading-container");
 LoadingPageContainer.appendChild(LoadingContainer);
 
 const LanternString = new Image();
 LanternString.src = "/assets/img/Vector 1.png";
-LanternString.setAttribute('class','lantern-string');
+LanternString.setAttribute("class", "lantern-string");
 LoadingContainer.appendChild(LanternString);
 
 const LanternSmall = new Image();
 LanternSmall.src = "/assets/img/Artboard 32.png";
-LanternSmall.setAttribute('class','lantern-small');
+LanternSmall.setAttribute("class", "lantern-small");
 LoadingContainer.appendChild(LanternSmall);
 
 const LanternMedium = new Image();
 LanternMedium.src = "/assets/img/Artboard 32.png";
-LanternMedium.setAttribute('class','lantern-medium');
+LanternMedium.setAttribute("class", "lantern-medium");
 LoadingContainer.appendChild(LanternMedium);
 
 const LanternLarge = new Image();
 LanternLarge.src = "/assets/img/Artboard 32.png";
-LanternLarge.setAttribute('class','lantern-large');
+LanternLarge.setAttribute("class", "lantern-large");
 LoadingContainer.appendChild(LanternLarge);
 
 const KiteFirework = new Image();
 KiteFirework.src = "/assets/img/Artboard 33.png";
-KiteFirework.setAttribute('class','kite-firework');
+KiteFirework.setAttribute("class", "kite-firework");
 LoadingContainer.appendChild(KiteFirework);
 
 const Cloud1 = new Image();
 Cloud1.src = "/assets/img/Artboard 40.png";
-Cloud1.setAttribute('class','cloud1');
+Cloud1.setAttribute("class", "cloud1");
 LoadingContainer.appendChild(Cloud1);
 
 const Cloud2 = new Image();
 Cloud2.src = "/assets/img/Artboard 40.png";
-Cloud2.setAttribute('class','cloud2');
+Cloud2.setAttribute("class", "cloud2");
 LoadingContainer.appendChild(Cloud2);
 
 const Cloud3 = new Image();
 Cloud3.src = "/assets/img/Artboard 40.png";
-Cloud3.setAttribute('class','cloud3');
+Cloud3.setAttribute("class", "cloud3");
 LoadingContainer.appendChild(Cloud3);
 
-const LoadingFrame = document.createElement('div');
-LoadingFrame.setAttribute('class','frame');
+const LoadingFrame = document.createElement("div");
+LoadingFrame.setAttribute("class", "frame");
 LoadingContainer.appendChild(LoadingFrame);
 
-const Rhombus = document.createElement('div');
-Rhombus.setAttribute('class','rhombus');
+const Rhombus = document.createElement("div");
+Rhombus.setAttribute("class", "rhombus");
 LoadingFrame.appendChild(Rhombus);
 
-const RhombusBorder = document.createElement('div');
-RhombusBorder.setAttribute('class','rhombus-border');
+const RhombusBorder = document.createElement("div");
+RhombusBorder.setAttribute("class", "rhombus-border");
 LoadingFrame.appendChild(RhombusBorder);
 
-const LoadingContent = document.createElement('div');
-LoadingContent.setAttribute('class','loading-content');
+const LoadingContent = document.createElement("div");
+LoadingContent.setAttribute("class", "loading-content");
 LoadingContainer.appendChild(LoadingContent);
 
-const NewYearTitle = document.createElement('h1');
-NewYearTitle.setAttribute('class','ny-title');
+const NewYearTitle = document.createElement("h1");
+NewYearTitle.setAttribute("class", "ny-title");
 NewYearTitle.innerText = "Chúc mừng năm mới";
 LoadingContent.appendChild(NewYearTitle);
 
-const NewYearNumber = document.createElement('h1');
-NewYearNumber.setAttribute('class','number-year');
+const NewYearNumber = document.createElement("h1");
+NewYearNumber.setAttribute("class", "number-year");
 NewYearNumber.innerText = "2023";
 LoadingContent.appendChild(NewYearNumber);
 
-const fireworksCanvas = document.createElement('canvas');
-fireworksCanvas.setAttribute('id', 'fw-canvas');
+const fireworksCanvas = document.createElement("canvas");
+fireworksCanvas.setAttribute("id", "fw-canvas");
 LoadingPageContainer.appendChild(fireworksCanvas);
 
-window.addEventListener('resize', resizeFireWorksCanvas, false);
-window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || 
-function (callback) {
-    window.setTimeout(callback, 1000/60);
-};
+window.addEventListener("resize", resizeFireWorksCanvas, false);
+window.requestAnimationFrame =
+  window.requestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.oRequestAnimationFrame ||
+  window.msRequestAnimationFrame ||
+  function (callback) {
+    window.setTimeout(callback, 1000 / 60);
+  };
 
-var fCanvas, fCtx, w, h, fParticles = [], fProbability = 0.04, fxPoint, fyPoint;
+var fCanvas,
+  fCtx,
+  w,
+  h,
+  fParticles = [],
+  fProbability = 0.04,
+  fxPoint,
+  fyPoint;
 
 export function waitCountDown() {
-    fwLoad();
-    playHappyNewYearAudio();
-    audioPlayHover();
-    setTimeout(addContent, 500);
+  fwLoad();
+  playHappyNewYearAudio();
+  audioPlayHover();
+  setTimeout(addContent, 500);
 }
 
 function addContent() {
-    LoadingContent.classList.add("show");
-    LoadingFrame.classList.add("show");
-    Cloud1.classList.add("show");
-    Cloud2.classList.add("show");
+  LoadingContent.classList.add("show");
+  LoadingFrame.classList.add("show");
+  Cloud1.classList.add("show");
+  Cloud2.classList.add("show");
 }
 function playHappyNewYearAudio() {
-    const happyNewYearAudio = new Audio('/assets/audio/happy_new_year_audio.mp3');
-    LoadingContainer.appendChild(happyNewYearAudio);
-    happyNewYearAudio.play();
+  const happyNewYearAudio = new Audio("/assets/audio/happy_new_year_audio.mp3");
+  LoadingContainer.appendChild(happyNewYearAudio);
+  happyNewYearAudio.play();
 }
 
 function audioPlayHover() {
-    document.body.addEventListener('hover', playHappyNewYearAudio);
+  document.body.addEventListener("hover", playHappyNewYearAudio);
 }
 function fwLoad() {
-    fCanvas = document.getElementById('fw-canvas');
-    fCtx = fCanvas.getContext("2d");
-    resizeFireWorksCanvas();
-    window.requestAnimationFrame(updateFWWorld);
+  fCanvas = document.getElementById("fw-canvas");
+  fCtx = fCanvas.getContext("2d");
+  resizeFireWorksCanvas();
+  window.requestAnimationFrame(updateFWWorld);
 }
 
 function resizeFireWorksCanvas() {
-    if(!!fCanvas) {
-        w = fCanvas.width = window.innerWidth;
-        h = fCanvas.height = window.innerHeight;
-    }
+  if (!!fCanvas) {
+    w = fCanvas.width = window.innerWidth;
+    h = fCanvas.height = window.innerHeight;
+  }
 }
 
 function updateFWWorld() {
-    updateFW();
-    paintFW();
-    window.requestAnimationFrame(updateFWWorld);
+  updateFW();
+  paintFW();
+  window.requestAnimationFrame(updateFWWorld);
 }
 
 function updateFW() {
-    if(fParticles.length < 500 && Math.random() < fProbability) {
-        createFirework();
+  if (fParticles.length < 500 && Math.random() < fProbability) {
+    createFirework();
+  }
+  const alive = [];
+  for (let i = 0; i < fParticles.length; i++) {
+    if (fParticles[i].move()) {
+      alive.push(fParticles[i]);
     }
-    const alive = [];
-    for (let i = 0; i < fParticles.length; i++) {
-        if(fParticles[i].move()) {
-            alive.push(fParticles[i]);
-        }
-    }
-    fParticles = alive;
+  }
+  fParticles = alive;
 }
 
 function paintFW() {
-    fCtx.globalCompositeOperation = 'source-over';
-    fCtx.fillStyle = 'rgba(255, 222, 173, 0.2)';
-    fCtx.fillRect(0, 0, w, h);
-    fCtx.globalCompositeOperation = 'lighter';
-    for(let i = 0; i < fParticles.length; i++) {
-        fParticles[i].draw(fCtx);
-    }
+  fCtx.globalCompositeOperation = "source-over";
+  fCtx.fillStyle = "rgba(255, 222, 173, 0.2)";
+  fCtx.fillRect(0, 0, w, h);
+  fCtx.globalCompositeOperation = "lighter";
+  for (let i = 0; i < fParticles.length; i++) {
+    fParticles[i].draw(fCtx);
+  }
 }
 
 function createFirework() {
-    fxPoint = Math.random() * (w-200) + 100;
-    fyPoint = Math.random() * (h-200) + 100;
-    const nFire = Math.random() * 50 + 100;
-    const c = "rgb("+(~~(Math.random()*200+55))+","
-                +(~~(Math.random()*200+55)) + "," + (~~(Math.random()*200+55)) + ")";
-    for(let i = 0; i < nFire; i++) {
-        const particle = new Particle();
-        particle.color = c;
-        const vy = Math.sqrt(25-particle.vx*particle.vx);
-        if(Math.abs(particle.vy) > vy) {
-            particle.vy = particle.vy > 0 ? vy: -vy;
-        }
-        fParticles.push(particle);
+  fxPoint = Math.random() * (w - 200) + 100;
+  fyPoint = Math.random() * (h - 200) + 100;
+  const nFire = Math.random() * 50 + 100;
+  const c =
+    "rgb(" +
+    ~~(Math.random() * 200 + 55) +
+    "," +
+    ~~(Math.random() * 200 + 55) +
+    "," +
+    ~~(Math.random() * 200 + 55) +
+    ")";
+  for (let i = 0; i < nFire; i++) {
+    const particle = new Particle();
+    particle.color = c;
+    const vy = Math.sqrt(25 - particle.vx * particle.vx);
+    if (Math.abs(particle.vy) > vy) {
+      particle.vy = particle.vy > 0 ? vy : -vy;
     }
+    fParticles.push(particle);
+  }
 }
 
 function Particle() {
-    this.w = this.h = Math.random() *4 + 1;
-    this.x = fxPoint-this.w/2;
-    this.y = fyPoint-this.h/2;
-    this.vx = (Math.random() - 0.5) * 10;
-    this.vy = (Math.random() - 0.5) * 10;
-    this.alpha = Math.random()*.5 + .5;
-    this.color;
+  this.w = this.h = Math.random() * 4 + 1;
+  this.x = fxPoint - this.w / 2;
+  this.y = fyPoint - this.h / 2;
+  this.vx = (Math.random() - 0.5) * 10;
+  this.vy = (Math.random() - 0.5) * 10;
+  this.alpha = Math.random() * 0.5 + 0.5;
+  this.color;
 }
 
 Particle.prototype = {
-    gravity: 0.05,
-    move: function() {
-        this.x += this.vx;
-        this.vy += this.gravity;
-        this.y += this.vy;
-        this.alpha -= 0.01;
-        if(this.x <= -this.w || this.x >= screen.width || this.y >= screen.height || this.alpha <= 0) {
-            return false;
-        }
-        return true;
-    },
-    draw: function(c) {
-        c.save();
-        c.beginPath();
-        c.translate(this.x + this.w/2, this.y + this.h/2);
-        c.arc(0,0,this.w,0,Math.PI*2);
-        c.fillStyle = this.color;
-        c.globalAlpha = this.alpha;
-        c.closePath();
-        c.fill();
-        c.restore();
+  gravity: 0.05,
+  move: function () {
+    this.x += this.vx;
+    this.vy += this.gravity;
+    this.y += this.vy;
+    this.alpha -= 0.01;
+    if (
+      this.x <= -this.w ||
+      this.x >= screen.width ||
+      this.y >= screen.height ||
+      this.alpha <= 0
+    ) {
+      return false;
     }
-}
+    return true;
+  },
+  draw: function (c) {
+    c.save();
+    c.beginPath();
+    c.translate(this.x + this.w / 2, this.y + this.h / 2);
+    c.arc(0, 0, this.w, 0, Math.PI * 2);
+    c.fillStyle = this.color;
+    c.globalAlpha = this.alpha;
+    c.closePath();
+    c.fill();
+    c.restore();
+  },
+};
 waitCountDown();
 
-const LoadingStyle = document.createElement('style');
+const LoadingStyle = document.createElement("style");
 LoadingStyle.innerHTML = `
     * {
         margin: 0;
