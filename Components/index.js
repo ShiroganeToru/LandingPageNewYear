@@ -70,24 +70,20 @@ const slidePage = [
         id: "script2",
     },
     {
-        path: "/Components/fireworks.js",
+        path: "/Components/Mainpage.js",
         id: "script3",
     },
     {
-        path: "/Components/Mainpage.js",
+        path: "/Components/pagoda.js",
         id: "script4",
     },
     {
-        path: "/Components/pagoda.js",
+        path: "/Components/wishing.js",
         id: "script5",
     },
     {
-        path: "/Components/wishing.js",
-        id: "script6",
-    },
-    {
         path: "/Components/GreetingCard.js",
-        id: "script7",
+        id: "script6",
     },
 ];
 let slideCounter = 0;
