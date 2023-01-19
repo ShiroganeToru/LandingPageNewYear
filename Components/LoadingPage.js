@@ -93,6 +93,8 @@ export function waitCountDown() {
 function addContent() {
     LoadingContent.classList.add("show");
     LoadingFrame.classList.add("show");
+    Cloud1.classList.add("show");
+    Cloud2.classList.add("show");
 }
 function playHappyNewYearAudio() {
     const happyNewYearAudio = new Audio('/assets/audio/happy_new_year_audio.mp3');
@@ -278,6 +280,7 @@ LoadingStyle.innerHTML = `
         left: 870px;
         z-index: 10;
         width: 300px;
+        opacity: 0;
     }
 
     .cloud2 {
@@ -286,6 +289,7 @@ LoadingStyle.innerHTML = `
         left: 400px;
         width: 400px;
         z-index: 10;
+        opacity: 0;
     }
 
     .cloud3 {
