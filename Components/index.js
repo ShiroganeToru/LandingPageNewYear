@@ -70,15 +70,15 @@ const slidePage = [
         id: "script2",
     },
     {
-        path: "/Components/Mainpage.js",
+        path: "/Components/MainPage.js",
         id: "script3",
     },
     {
-        path: "/Components/pagoda.js",
+        path: "/Components/Pagoda.js",
         id: "script4",
     },
     {
-        path: "/Components/wishing.js",
+        path: "/Components/Wishing.js",
         id: "script5",
     },
     {
