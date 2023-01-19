@@ -111,7 +111,7 @@ const addMoney = () => {
         window.requestAnimationFrame(moneyFalling);
     };
     window.requestAnimationFrame(moneyFalling);
-    document.body.appendChild(money);
+    PagodaContainer.appendChild(money);
 };
 
 function callBackMoney() {

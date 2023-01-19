@@ -193,7 +193,7 @@ const addSakura = () => {
         window.requestAnimationFrame(sakuraFalling);
     };
     window.requestAnimationFrame(sakuraFalling);
-    document.body.appendChild(sakura);
+    WishingContainer.appendChild(sakura);
 };
 
 function callBackSakura() {

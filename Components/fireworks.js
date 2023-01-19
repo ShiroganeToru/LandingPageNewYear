@@ -119,13 +119,14 @@ export function waitCountDown() {
     addText();
 }
 
-function addText() {
-    happyNewYearText.classList.add("show");
-    yearText.classList.add("show");
-    descriptionNewYear.classList.add("show");
-}
+// function addText() {
+//     happyNewYearText.classList.add("show");
+//     yearText.classList.add("show");
+//     descriptionNewYear.classList.add("show");
+// }
 function playHappyNewYearAudio() {
     const happyNewYearAudio = new Audio('/assets/audio/happy_new_year_audio.mp3');
+    fireworksContainer.appendChild(happyNewYearAudio);
     happyNewYearAudio.play();
 }
 
@@ -226,7 +227,7 @@ Particle.prototype = {
         c.restore();
     }
 }
-
+waitCountDown();
 //text 
 const happyNewYearText = document.createElement('div');
 happyNewYearText.className = 'happy-new-year-text';
@@ -246,4 +247,3 @@ textContainer.appendChild(yearText);
 textContainer.appendChild(happyNewYearText);
 textContainer.appendChild(descriptionNewYear);
 fireworksContainer.appendChild(textContainer);
-waitCountDown();
