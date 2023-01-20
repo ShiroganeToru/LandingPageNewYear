@@ -855,3 +855,38 @@ MyText.addEventListener("input", function () {
         document.querySelector(".button-confirm").style.opacity = "1";
     }
 });
+
+//form results
+const FormResults = document.createElement("div");
+FormResults.style.width = "500px";
+FormResults.style.height = "500px";
+FormResults.style.backgroundColor = "white";
+FormResults.style.display = "none";
+GreetingContainer.appendChild(FormResults);
+const TitleResults = document.createElement("h4");
+TitleResults.innerText = "Results";
+FormResults.appendChild(TitleResults);
+const NameResult = document.createElement("p");
+FormResults.appendChild(NameResult);
+const OtherNameResult = document.createElement("p");
+FormResults.appendChild(OtherNameResult);
+const TextResult = document.createElement("p");
+FormResults.appendChild(TextResult);
+
+//print results
+FormInput.addEventListener("submit", (e) => {
+    e.preventDefault();
+})
+ButtonConfirm.addEventListener("click", function (e) {
+    e.preventDefault();
+    const yname = NameInput.value;
+    const otherName = RecipientInput.value;
+    const message = MessageInput.value;
+    FormPopup.style.display = 'none';
+    BackgroundPopup.style.display = 'none';
+    FormResults.style.display = 'flex';
+    FormResults.style.flexDirection = 'column';
+    NameResult.innerText = yname;
+    OtherNameResult.innerText = otherName;
+    TextResult.innerText = message;
+})
