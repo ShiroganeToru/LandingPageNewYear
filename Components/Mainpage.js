@@ -2,88 +2,100 @@ const MainpageContainer = document.createElement('section');
 MainpageContainer.setAttribute('class', 'mainpage-container');
 document.body.appendChild(MainpageContainer);
 
+const BackgroundContainer = document.createElement('div');
+BackgroundContainer.setAttribute('class','bg-container');
+MainpageContainer.appendChild(BackgroundContainer);
+
 const ground = new Image();
 ground.src = "/assets/img/Vector 2.png";
 ground.setAttribute('class','surface')
-MainpageContainer.appendChild(ground);
+BackgroundContainer.appendChild(ground);
 
 const LanternString = new Image();
 LanternString.src = "/assets/img/Vector 1.png";
 LanternString.setAttribute('class','lantern-string');
-MainpageContainer.appendChild(LanternString);
+BackgroundContainer.appendChild(LanternString);
 
 const LanternSmall = new Image();
 LanternSmall.src = "/assets/img/Artboard 32.png";
 LanternSmall.setAttribute('class','lantern-small');
-MainpageContainer.appendChild(LanternSmall);
+BackgroundContainer.appendChild(LanternSmall);
 
 const LanternMedium = new Image();
 LanternMedium.src = "/assets/img/Artboard 32.png";
 LanternMedium.setAttribute('class','lantern-medium');
-MainpageContainer.appendChild(LanternMedium);
+BackgroundContainer.appendChild(LanternMedium);
 
 const LanternLarge = new Image();
 LanternLarge.src = "/assets/img/Artboard 32.png";
 LanternLarge.setAttribute('class','lantern-large');
-MainpageContainer.appendChild(LanternLarge);
+BackgroundContainer.appendChild(LanternLarge);
 
 const Bush1 = new Image();
 Bush1.src = "/assets/img/Artboard 36 2.png";
 Bush1.setAttribute('class','bush-dark1');
-MainpageContainer.appendChild(Bush1);
+BackgroundContainer.appendChild(Bush1);
 
 const Bush2 = new Image();
 Bush2.src = "/assets/img/Artboard 36 1.png";
 Bush2.setAttribute('class','bush-dark2');
-MainpageContainer.appendChild(Bush2);
+BackgroundContainer.appendChild(Bush2);
 
 const Bush3 = new Image();
 Bush3.src = "/assets/img/Artboard 39 1.png";
 Bush3.setAttribute('class','bush-light1');
-MainpageContainer.appendChild(Bush3);
+BackgroundContainer.appendChild(Bush3);
 
 const Bush4 = new Image();
 Bush4.src = "/assets/img/Artboard 39 2.png";
 Bush4.setAttribute('class','bush-light2');
-MainpageContainer.appendChild(Bush4);
+BackgroundContainer.appendChild(Bush4);
 
 const Cat = new Image();
 Cat.src = "/assets/img/Cat/Artboard 14.png";
 Cat.setAttribute('class','cat');
-MainpageContainer.appendChild(Cat);
+BackgroundContainer.appendChild(Cat);
 
 const Coin1 = new Image();
 Coin1.src = "/assets/img/Artboard 35.png";
 Coin1.setAttribute('class','coin1');
-MainpageContainer.appendChild(Coin1);
+BackgroundContainer.appendChild(Coin1);
 
 const Coin2 = new Image();
 Coin2.src = "/assets/img/Artboard 35.png";
 Coin2.setAttribute('class','coin2');
-MainpageContainer.appendChild(Coin2);
+BackgroundContainer.appendChild(Coin2);
 
 const KiteFirework = new Image();
 KiteFirework.src = "/assets/img/Artboard 33.png";
 KiteFirework.setAttribute('class','kite-firework');
-MainpageContainer.appendChild(KiteFirework);
+BackgroundContainer.appendChild(KiteFirework);
+
+const ContentContainer = document.createElement('div');
+ContentContainer.setAttribute('class','content-container');
+MainpageContainer.appendChild(ContentContainer);
+
+const TitleContainer = document.createElement('div');
+TitleContainer.setAttribute('class','title-container');
+ContentContainer.appendChild(TitleContainer);
 
 const Hny = document.createElement('h1');
 const HnyText = document.createTextNode("Chúc mừng năm mới")
 Hny.setAttribute('class','hny');
 Hny.appendChild(HnyText);
-MainpageContainer.appendChild(Hny);
+TitleContainer.appendChild(Hny);
 
 const Year = document.createElement('h1');
 const YearNumber = document.createTextNode("2023")
 Year.setAttribute('class','year');
 Year.appendChild(YearNumber);
-MainpageContainer.appendChild(Year);
+TitleContainer.appendChild(Year);
 
 const distich = document.createElement('p');
 const distichText = document.createTextNode("Cung chúc tân xuân - Vạn sự như ý");
 distich.setAttribute('class','distich');
 distich.appendChild(distichText);
-MainpageContainer.appendChild(distich);
+ContentContainer.appendChild(distich);
 
 const buttonGo = document.createElement('button');
 buttonGo.setAttribute('class', 'button-go');
@@ -95,16 +107,30 @@ MainpageContainer.appendChild(buttonGo);
 
 const MainpageStyle = document.createElement('style');
 MainpageStyle.innerHTML = `
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Quicksand', sans-serif;
+    }
+
     body {
         background: #FFDEAB;
         font-family: 'Quicksand', sans-serif;
-
+        overflow: hidden;
         background: #FFDEAB;
     }
 
     .mainpage-container {
         width: 100%;
         height: 100%;
+        overflow: hidden;
+    }
+
+    .bg-container {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
     }
 
     .surface {
@@ -112,7 +138,7 @@ MainpageStyle.innerHTML = `
         height: 35%;
         position: absolute;
         left: 0;
-        top: 603px;
+        bottom: 0;
         z-index: 0;
     }
 
@@ -204,16 +230,26 @@ MainpageStyle.innerHTML = `
         width: 20%;
         position: absolute;
         top: 0px;
-        left: 1440px;
+        left: 1550px;
+    }
+    .content-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        padding: 50px 0;
+    }
+
+    .title-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
     }
 
     .hny {
-        position: absolute;
-        width: 600px;
-        height: 160px;
-        left: 300px;
-        top: 20px;
-
+        width: 500px;
         font-style: normal;
         font-weight: 700;
         font-size: 90px;
@@ -224,13 +260,6 @@ MainpageStyle.innerHTML = `
     }
 
     .year {
-        position: absolute;
-        width: 600px;
-        height: 160px;
-        left: 820px;
-        top: 118px;;
-        margin: 0;
-
         font-style: normal;
         font-weight: 700;
         font-size: 210px;
@@ -241,12 +270,6 @@ MainpageStyle.innerHTML = `
     }
 
     .distich {
-        position: absolute;
-        width: 720px;
-        height: 102px;
-        left: 575px;
-        top: 295px;
-
         font-style: normal;
         font-weight: 500;
         font-size: 32px;
