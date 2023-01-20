@@ -1,5 +1,5 @@
-const MainpageContainer = document.createElement('section');
-MainpageContainer.setAttribute('class', 'mainpage-container');
+const MainpageContainer = document.createElement("section");
+MainpageContainer.setAttribute("class", "mainpage-container");
 document.body.appendChild(MainpageContainer);
 
 const BackgroundContainer = document.createElement('div');
@@ -79,33 +79,35 @@ const TitleContainer = document.createElement('div');
 TitleContainer.setAttribute('class','title-container');
 ContentContainer.appendChild(TitleContainer);
 
-const Hny = document.createElement('h1');
-const HnyText = document.createTextNode("Chúc mừng năm mới")
-Hny.setAttribute('class','hny');
+const Hny = document.createElement("h1");
+const HnyText = document.createTextNode("Chúc mừng năm mới");
+Hny.setAttribute("class", "hny");
 Hny.appendChild(HnyText);
 TitleContainer.appendChild(Hny);
 
-const Year = document.createElement('h1');
-const YearNumber = document.createTextNode("2023")
-Year.setAttribute('class','year');
+const Year = document.createElement("h1");
+const YearNumber = document.createTextNode("2023");
+Year.setAttribute("class", "year");
 Year.appendChild(YearNumber);
 TitleContainer.appendChild(Year);
 
-const distich = document.createElement('p');
-const distichText = document.createTextNode("Cung chúc tân xuân - Vạn sự như ý");
-distich.setAttribute('class','distich');
+const distich = document.createElement("p");
+const distichText = document.createTextNode(
+  "Cung chúc tân xuân - Vạn sự như ý"
+);
+distich.setAttribute("class", "distich");
 distich.appendChild(distichText);
 ContentContainer.appendChild(distich);
 
-const buttonGo = document.createElement('button');
-buttonGo.setAttribute('class', 'button-go');
-const buttonIcon = document.createElement('i');
-buttonIcon.setAttribute('class','fa-solid fa-play');
+const buttonGo = document.createElement("button");
+buttonGo.setAttribute("class", "button-go");
+const buttonIcon = document.createElement("i");
+buttonIcon.setAttribute("class", "fa-solid fa-play");
 buttonGo.appendChild(buttonIcon);
 buttonGo.innerText = "Đi thắp hương đầu năm nào!";
 MainpageContainer.appendChild(buttonGo);
 
-const MainpageStyle = document.createElement('style');
+const MainpageStyle = document.createElement("style");
 MainpageStyle.innerHTML = `
     * {
         margin: 0;

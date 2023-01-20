@@ -1,5 +1,5 @@
-export const PagodaContainer = document.createElement('section');
-PagodaContainer.setAttribute('class', 'pagoda-container');
+export const PagodaContainer = document.createElement("section");
+PagodaContainer.setAttribute("class", "pagoda-container");
 document.body.appendChild(PagodaContainer);
 
 const apricot = new Image();
@@ -22,71 +22,75 @@ const fortunePrayRight = new Image();
 fortunePrayRight.src = "/assets/img/Pagoda/fortune-pray.png";
 const fireworkRight = new Image();
 fireworkRight.src = "/assets/img/Wishing/firework1.png";
-fireworkRight.setAttribute('class', 'firework-right');
+fireworkRight.setAttribute("class", "firework-right");
 const PagodaIncense = new Image();
 PagodaIncense.src = "/assets/img/Pagoda/pagoda-incense.png";
 
 //after pray starts
-const haloContainer = document.createElement('div');
-const halo = document.createElement('div');
-haloContainer.setAttribute('class', 'halo-container');
-halo.setAttribute('class', 'halo');
+const haloContainer = document.createElement("div");
+const halo = document.createElement("div");
+haloContainer.setAttribute("class", "halo-container");
+halo.setAttribute("class", "halo");
 
 haloContainer.appendChild(halo);
 //after pray ends
 
 const PagodaDiv = document.createElement("div");
-PagodaDiv.setAttribute('class', 'pagoda-div');
+PagodaDiv.setAttribute("class", "pagoda-div");
 const LayerUnder = document.createElement("div");
-LayerUnder.setAttribute('class', 'layer-under');
+LayerUnder.setAttribute("class", "layer-under");
 PagodaContainer.appendChild(PagodaDiv);
 PagodaContainer.appendChild(LayerUnder);
 
 LayerUnder.appendChild(PagodaIncense);
-PagodaIncense.setAttribute('class', 'pagoda');
-apricot.setAttribute('class', 'apricot');
-sakuraLeft.setAttribute('class', 'sakura-left');
-lanternCenter.setAttribute('class', 'lantern-center');
-lanternCenter2.setAttribute('class', 'lantern-center2');
+PagodaIncense.setAttribute("class", "pagoda");
+apricot.setAttribute("class", "apricot");
+sakuraLeft.setAttribute("class", "sakura-left");
+lanternCenter.setAttribute("class", "lantern-center");
+lanternCenter2.setAttribute("class", "lantern-center2");
 PagodaContainer.appendChild(sakuraLeft);
 PagodaContainer.appendChild(apricot);
 PagodaContainer.appendChild(lanternCenter);
 PagodaContainer.appendChild(lanternCenter2);
 
-const lanternCenter3 = document.querySelector('.lantern-center').cloneNode(true);
-lanternCenter3.setAttribute('class', 'lantern-center3');
+const lanternCenter3 = document
+    .querySelector(".lantern-center")
+    .cloneNode(true);
+lanternCenter3.setAttribute("class", "lantern-center3");
 PagodaContainer.appendChild(lanternCenter3);
-const lanternCenter4 = document.querySelector('.lantern-center2').cloneNode(true);
-lanternCenter4.setAttribute('class', 'lantern-center4');
+const lanternCenter4 = document
+    .querySelector(".lantern-center2")
+    .cloneNode(true);
+lanternCenter4.setAttribute("class", "lantern-center4");
 PagodaContainer.appendChild(lanternCenter4);
 PagodaContainer.appendChild(fireworkRight);
 
 // before pray starts
-const catContainer = document.createElement('div');
-catContainer.setAttribute('class', 'cat-container');
-cat.setAttribute('class', 'cat');
+const catContainer = document.createElement("div");
+catContainer.setAttribute("class", "cat-container");
+cat.setAttribute("class", "cat");
 PagodaContainer.appendChild(catContainer);
 catContainer.appendChild(cat);
-const buttonPrayDiv = document.createElement('div');
-buttonPrayDiv.setAttribute('class', 'button-pray-div');
+const buttonPrayDiv = document.createElement("div");
+buttonPrayDiv.setAttribute("class", "button-pray-div");
 PagodaContainer.appendChild(buttonPrayDiv);
-const buttonPray = document.createElement('button');
+const buttonPray = document.createElement("button");
 buttonPray.textContent = "Pray";
-buttonPray.setAttribute('class', 'button-pray');
+buttonPray.setAttribute("class", "button-pray");
 buttonPrayDiv.appendChild(buttonPray);
 
-fortune.setAttribute('class', 'fortune');
+fortune.setAttribute("class", "fortune");
 PagodaContainer.appendChild(fortune);
 // before pray ends
 
 //after pray starts
-fortunePray.setAttribute('class', 'fortune-pray');
-const handPrayDiv = document.createElement('div');
-handPrayDiv.setAttribute('class', 'hand-pray-div');
-handPray.setAttribute('class', 'hand-pray');
-fortunePrayRight.setAttribute('class', 'fortune-pray-right');
-const fortunePrayDiv = document.createElement('div');
-fortunePrayDiv.setAttribute('class', 'fortune-pray-div');
+fortunePray.setAttribute("class", "fortune-pray");
+const handPrayDiv = document.createElement("div");
+handPrayDiv.setAttribute("class", "hand-pray-div");
+handPray.setAttribute("class", "hand-pray");
+fortunePrayRight.setAttribute("class", "fortune-pray-right");
+const fortunePrayDiv = document.createElement("div");
+fortunePrayDiv.setAttribute("class", "fortune-pray-div");
 PagodaContainer.appendChild(fortunePrayDiv);
 fortunePrayDiv.appendChild(fortunePray);
 PagodaContainer.appendChild(handPrayDiv);
@@ -101,7 +105,7 @@ const addMoney = () => {
     let screenHeight = window.innerHeight;
     let money = new Image();
     money.src = "../assets/img/Wishing/money-red.png";
-    money.style.position = 'absolute';
+    money.style.position = "absolute";
     money.style.top = "-2px";
     money.style.right = random(0, screenWidth) + "px";
     money.style.zIndex = "10";
@@ -119,36 +123,36 @@ function callBackMoney() {
         setTimeout(addMoney, i * 80);
     }
 }
-buttonPray.onclick = function() {
+buttonPray.onclick = function () {
     showAfterPray();
     setTimeout(showBeforePray, 12500);
-}
-function showAfterPray () {
-    fortunePray.classList.add('show');
-    handPrayDiv.classList.add('show');
-    handPrayDiv.style.display = 'block';
-    fortunePrayRight.classList.add('show');
-    haloContainer.classList.add('show');
+};
+function showAfterPray() {
+    fortunePray.classList.add("show");
+    handPrayDiv.classList.add("show");
+    handPrayDiv.style.display = "block";
+    fortunePrayRight.classList.add("show");
+    haloContainer.classList.add("show");
     callBackMoney();
 
-    buttonPray.classList.add('hide');
-    catContainer.classList.add('hide');
-    fortune.classList.add('hide');
+    buttonPray.classList.add("hide");
+    catContainer.classList.add("hide");
+    fortune.classList.add("hide");
 }
 
-function showBeforePray () {
-    fortunePray.classList.remove('show');
-    handPrayDiv.classList.remove('show');
-    handPrayDiv.style.display = 'block';
-    fortunePrayRight.classList.remove('show');
-    haloContainer.classList.remove('show');
+function showBeforePray() {
+    fortunePray.classList.remove("show");
+    handPrayDiv.classList.remove("show");
+    handPrayDiv.style.display = "block";
+    fortunePrayRight.classList.remove("show");
+    haloContainer.classList.remove("show");
 
-    buttonPray.classList.remove('hide');
-    catContainer.classList.remove('hide');
-    fortune.classList.remove('hide');
+    buttonPray.classList.remove("hide");
+    catContainer.classList.remove("hide");
+    fortune.classList.remove("hide");
 }
 
-export const PagodaStyle = document.createElement('style');
+export const PagodaStyle = document.createElement("style");
 document.head.appendChild(PagodaStyle);
 PagodaStyle.innerHTML = `
     body {
