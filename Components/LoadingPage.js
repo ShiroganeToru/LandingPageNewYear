@@ -386,5 +386,329 @@ LoadingStyle.innerHTML = `
         opacity: 1;
         transition: opacity 300ms;
     }
+
+    @media only screen and (max-width: 1440px) {
+        .lantern-string {
+            width: 25%;
+        }
+
+        .lantern-large {
+            width: 25%;
+            top: 180px;
+            left: -200px;
+        }
+
+        .lantern-medium {
+            width: 20%;
+            top: 110px;
+            left: 50px;
+        }
+
+        .lantern-small {
+            width: 15%;
+            top: 15px;
+            left: 240px;
+        }
+
+        .cloud1 {
+            top: 640px;
+            left: 600px;
+        }
+
+        .cloud2 {
+            top: 280px;
+            left: 150px;
+        }
+
+        .cloud3 {
+            top: -200px;
+            left: 1000px;
+        }
+
+        .kite-firework {
+            top: 500px;
+            left: 1000px;
+        }
+    }
+
+    @media only screen and (max-width: 1024px) {
+        .lantern-string {
+            width: 30%;
+        }
+
+        .lantern-large {
+            width: 20%;
+            top: 140px;
+            left: -80px;
+        }
+
+        .lantern-medium {
+            width: 15%;
+            top: 90px;
+            left: 90px;
+        }
+
+        .lantern-small {
+            width: 10%;
+            top: 40px;
+            left: 220px;
+        }
+
+        .cloud1 {
+            top: 570px;
+            left: 400px;
+        }
+
+        .cloud2 {
+            top: 250px;
+            left: 30px;
+        }
+
+        .cloud3 {
+            top: -200px;
+            left: 700px;
+        }
+
+        .kite-firework {
+            width: 40%;
+            top: 500px;
+            left: 700px;
+        }
+
+        .rhombus {
+            width: 450px;
+            height: 450px;
+        }
+
+        .rhombus-border {
+            width: 400px;
+            height: 400px;
+        }
+
+        .ny-title {
+            width: 300px;
+            font-size: 56px;
+            line-height: 60px;
+        }
+
+        .number-year {
+            font-size: 96px;
+        }
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .lantern-string {
+            width: 40%;
+        }
+
+        .lantern-large {
+            width: 30%;
+            top: 135px;
+            left: -70px;
+        }
+
+        .lantern-medium {
+            width: 25%;
+            top: 80px;
+            left: 90px;
+        }
+
+        .lantern-small {
+            width: 20%;
+            top: 15px;
+            left: 220px;
+        }
+        
+        .kite-firework {
+            width: 400px;
+            top: 650px;
+            left: 550px;
+            transform: rotate(-15deg);
+        }
+
+        .cloud1 {
+            top: 600px;
+            left: 240px;
+            width: 300px;
+        }
+
+        .cloud2 {
+            top: 660px;
+            left: -200px;
+        }
+
+        .cloud3 {
+            width: 400px;
+            top: -130px;
+            left: 550px;
+        }
+
+        .loading-content {
+            gap: 10px;
+        }
+        
+        .rhombus {
+            width: 450px;
+            height: 450px;
+        }
+
+        .rhombus-border {
+            width: 400px;
+            height: 400px;
+        }
+
+        .ny-title {
+            font-size: 60px;
+            line-height: 60px;
+        }
+
+        .number-year {
+            font-size: 100px;
+        }
+    }
+
+    @media only screen and (max-width: 412px) {
+        .lantern-string {
+            width: 50%;
+        }
+
+        .lantern-large {
+            width: 40%;
+            top: 92px;
+            left: -70px;
+        }
+
+        .lantern-medium {
+            width: 30%;
+            top: 57px;
+            left: 50px;
+        }
+
+        .lantern-small {
+            width: 20%;
+            top: 20px;
+            left: 140px;
+        }
+        
+        .kite-firework {
+            width: 300px;
+            top: 700px;
+            left: 200px;
+            transform: rotate(-15deg);
+        }
+
+        .cloud1 {
+            top: 520px;
+            left: 120px;
+            width: 200px;
+        }
+
+        .cloud2 {
+            top: 680px;
+            left: -200px;
+        }
+
+        .cloud3 {
+            width: 400px;
+            top: 0px;
+            left: 250px;
+        }
+
+        .loading-content {
+            gap: 10px;
+        }
+        
+        .rhombus {
+            width: 250px;
+            height: 250px;
+        }
+
+        .rhombus-border {
+            width: 225px;
+            height: 225px;
+        }
+
+        .ny-title {
+            width: 200px;
+            font-size: 30px;
+            line-height: 35px;
+        }
+
+        .number-year {
+            font-size: 65px;
+        }
+    }
+
+    @media only screen and (max-width: 390px) {
+        .lantern-string {
+            width: 50%;
+        }
+
+        .lantern-large {
+            width: 40%;
+            top: 92px;
+            left: -70px;
+        }
+
+        .lantern-medium {
+            width: 30%;
+            top: 57px;
+            left: 50px;
+        }
+
+        .lantern-small {
+            width: 20%;
+            top: 20px;
+            left: 140px;
+        }
+        
+        .kite-firework {
+            width: 300px;
+            top: 600px;
+            left: 200px;
+            transform: rotate(-15deg);
+        }
+
+        .cloud1 {
+            top: 520px;
+            left: 120px;
+            width: 200px;
+        }
+
+        .cloud2 {
+            top: 680px;
+            left: -200px;
+        }
+
+        .cloud3 {
+            width: 400px;
+            top: 0px;
+            left: 250px;
+        }
+
+        .loading-content {
+            gap: 10px;
+        }
+        
+        .rhombus {
+            width: 250px;
+            height: 250px;
+        }
+
+        .rhombus-border {
+            width: 225px;
+            height: 225px;
+        }
+
+        .ny-title {
+            width: 200px;
+            font-size: 30px;
+            line-height: 35px;
+        }
+
+        .number-year {
+            font-size: 65px;
+        }
+    }
 `;
 document.head.appendChild(LoadingStyle);

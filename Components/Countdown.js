@@ -122,12 +122,29 @@ CountdownStyle.innerHTML = `
     }
 
     .scene {
+        width: 100%;
+        height: 100vh;
     }
     
     .scene i {
         position: absolute;
         background: white;
         border-radius: 50%;
+    }
+
+    @media only screen and (max-width: 390px) {
+        .countdown-layout {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .countdown-layout div p {
+            font-size: 100px;
+        }
+
+        .countdown-layout div span {
+            font-size: 36px;
+        }
     }
 `;
 document.head.appendChild(CountdownStyle);
