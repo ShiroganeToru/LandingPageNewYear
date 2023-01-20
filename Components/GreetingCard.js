@@ -2,6 +2,32 @@ const GreetingContainer = document.createElement("section");
 GreetingContainer.setAttribute("class", "greeting-container");
 document.body.appendChild(GreetingContainer);
 
+const ContentContainer = document.createElement("div");
+ContentContainer.setAttribute("class","content-container");
+GreetingContainer.appendChild(ContentContainer);
+
+const Hny = document.createElement("h1");
+const HnyText = document.createTextNode("Tạo thiệp chúc");
+Hny.setAttribute("class", "hny");
+Hny.appendChild(HnyText);
+ContentContainer.appendChild(Hny);
+
+const distich = document.createElement("p");
+const distichText = document.createTextNode(
+  "Cung chúc tân xuân - Vạn sự như ý"
+);
+distich.setAttribute("class", "distich");
+distich.appendChild(distichText);
+ContentContainer.appendChild(distich);
+
+const buttonCreate = document.createElement("button");
+buttonCreate.setAttribute("class", "button-popup");
+const buttonIcon = document.createElement("i");
+buttonIcon.setAttribute("class", "fa-solid fa-play");
+buttonCreate.appendChild(buttonIcon);
+buttonCreate.innerText = "Gửi lời chúc";
+ContentContainer.appendChild(buttonCreate);
+
 const ground = new Image();
 ground.src = "/assets/img/Vector 2.png";
 ground.setAttribute("class", "surface");
@@ -66,28 +92,6 @@ const KiteFirework = new Image();
 KiteFirework.src = "/assets/img/Artboard 33.png";
 KiteFirework.setAttribute("class", "kite-firework");
 GreetingContainer.appendChild(KiteFirework);
-
-const Hny = document.createElement("h1");
-const HnyText = document.createTextNode("Tạo thiệp chúc");
-Hny.setAttribute("class", "hny");
-Hny.appendChild(HnyText);
-GreetingContainer.appendChild(Hny);
-
-const distich = document.createElement("p");
-const distichText = document.createTextNode(
-  "Cung chúc tân xuân - Vạn sự như ý"
-);
-distich.setAttribute("class", "distich");
-distich.appendChild(distichText);
-GreetingContainer.appendChild(distich);
-
-const buttonCreate = document.createElement("button");
-buttonCreate.setAttribute("class", "button-popup");
-const buttonIcon = document.createElement("i");
-buttonIcon.setAttribute("class", "fa-solid fa-play");
-buttonCreate.appendChild(buttonIcon);
-buttonCreate.innerText = "Gửi lời chúc";
-GreetingContainer.appendChild(buttonCreate);
 
 const BackgroundPopup = document.createElement("div");
 BackgroundPopup.setAttribute("class", "bg-popup");
@@ -176,12 +180,19 @@ GreetingStyle.innerHTML = `
         gap: 20px;
     }
 
+    .bg-container {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        z-index: 0;
+    }
+
     .surface {
         width: 100%;
         height: 35%;
         position: absolute;
         left: 0;
-        top: 603px;
+        bottom: 0;
         z-index: 0;
     }
 
@@ -218,7 +229,7 @@ GreetingStyle.innerHTML = `
     .bush-dark1 {
         width: 20%;
         position: absolute;
-        top: 642px;
+        bottom: 0;
         left: 1536px;
         z-index: 2;
     }
@@ -226,8 +237,8 @@ GreetingStyle.innerHTML = `
     .bush-dark2 {
         width: 20%;
         position: absolute;
-        top: 612px;
-        left: 0px;
+        bottom: 0;
+        left: 0;
         z-index: 2;
     }
 
@@ -242,7 +253,7 @@ GreetingStyle.innerHTML = `
     .bush-light2 {
         width: 15%;
         position: absolute;
-        top: 612px;
+        bottom: 0;
         left: 25px;
         z-index: 1;
     }
@@ -277,8 +288,6 @@ GreetingStyle.innerHTML = `
     }
 
     .hny {
-        width: 750px;
-        height: 100px;
         margin-top: 50px;
 
         font-style: normal;
@@ -292,7 +301,7 @@ GreetingStyle.innerHTML = `
     
     .distich {
         width: 720px;
-        height: 75px;
+        height: 55px;
 
         font-style: normal;
         font-weight: 500;
@@ -323,6 +332,14 @@ GreetingStyle.innerHTML = `
         font-weight: 600;
         font-size: 24px;
         line-height: 30px;
+    }
+
+    .content-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .bg-popup {
@@ -367,6 +384,7 @@ GreetingStyle.innerHTML = `
     form {
         display: flex;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
         gap: 25px;
     }
@@ -445,6 +463,361 @@ GreetingStyle.innerHTML = `
         left: 1390px;
 
         cursor: pointer;
+    }
+
+    @media only screen and (max-width: 1440px) {
+        .lantern-large {
+            width: 15%;
+            top: 100px;
+            left: -100px;
+        }
+
+        .lantern-medium {
+            width: 10%;
+            top: 60px;
+        }
+
+        .lantern-small {
+            width: 5%;
+            top: 30px;
+            left: 150px;
+        }
+        
+        .bush-light1 {
+            top: 700px;
+            left: 1140px;
+        }
+
+        .bush-dark1{
+            left: 1152px;
+        }
+
+        .coin1 {
+            left: 300px;
+        }
+
+        .coin2 {
+            top: 560px;
+            left: 270px;
+        }
+
+        .cat {
+            width: 30%;
+            top: 400px;
+            left: 500px;
+        }
+
+        .kite-firework {
+            top: -50px;
+            left: 1240px;
+        }
+
+        .content-container {
+            padding-top: 50px;
+        }
+
+        .name-input, .recipient-input {
+            width: 650px;
+        }
+
+        .message-input {
+            width: 650px;
+        }
+
+        .alert-frame {
+            width: 650px;
+        }
+
+        .close {
+            left: 1030px;
+        }
+    }
+
+    @media only screen and (max-width: 1024px) {
+        .surface {
+            height: 25%;
+        }
+        
+        .lantern-string {
+            width: 25%;
+        }
+        
+        .lantern-large {
+            width: 15%;
+            top: 120px;
+            left: -60px;
+        }
+
+        .lantern-medium {
+            width: 12%;
+            top: 80px;
+            left: 60px;
+        }
+
+        .lantern-small {
+            width: 9%;
+            top: 45px;
+            left: 160px;
+        }
+        
+        .bush-light1 {
+            top: 750px;
+            left: 840px;
+        }
+
+        .bush-dark1{
+            left: 852px;
+        }
+
+        .coin1 {
+            top: 700px;
+            left: 180px;
+        }
+
+        .coin2 {
+            top: 680px;
+            left: 150px;
+        }
+
+        .cat {
+            width: 40%;
+            top: 500px;
+            left: 320px;
+        }
+
+        .kite-firework {
+            top: -30px;
+            left: 800px;
+        }
+
+        .content-container {
+            padding-top: 150px;
+        }
+
+        .hny {
+            font-size: 60px;
+            line-height: 80px;
+        }
+
+        .year {
+            font-size: 160px;
+        }
+
+        .name-input, .recipient-input {
+            width: 470px;
+        }
+
+        .message-input {
+            width: 470px;
+        }
+
+        .alert-frame {
+            width: 470px;
+        }
+
+        .close {
+            left: 720px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .surface {
+            height: 20%;
+        }
+        
+        .lantern-string {
+            width: 30%;
+        }
+        
+        .lantern-large {
+            width: 20%;
+            top: 108px;
+            left: -60px;
+        }
+
+        .lantern-medium {
+            width: 15%;
+            top: 73px;
+            left: 60px;
+        }
+
+        .lantern-small {
+            width: 10s%;
+            top: 35px;
+            left: 160px;
+        }
+        
+        .bush-light1 {
+            top: 800px;
+            left: 600px;
+        }
+
+        .bush-dark1{
+            left: 615px;
+        }
+
+        .coin1 {
+            top: 750px;
+            left: 130px;
+        }
+
+        .coin2 {
+            top: 730px;
+            left: 120px;
+        }
+
+        .cat {
+            width: 40%;
+            top: 600px;
+            left: 240px;
+        }
+
+        .kite-firework {
+            width: 40%;
+            top: -30px;
+            left: 500px;
+        }
+
+        .content-container {
+            padding-top: 200px;
+        }
+
+        .hny {
+            font-size: 60px;
+            line-height: 80px;
+        }
+
+        .year {
+            font-size: 160px;
+        }
+
+        .popup {
+            width: 80%
+        }
+        .name-input, .recipient-input {
+            width: 570px;
+        }
+
+        .message-input {
+            width: 570px;
+        }
+
+        .alert-frame {
+            width: 570px;
+        }
+
+        .close {
+            left: 650px;
+        }
+    }
+
+    @media only screen and (max-width: 425px) {
+        .surface {
+            height: 15%;
+        }
+        
+        .lantern-string {
+            width: 30%;
+        }
+        
+        .lantern-large {
+            width: 30%;
+            top: 60px;
+            left: -60px;
+        }
+
+        .lantern-medium {
+            width: 20%;
+            top: 33px;
+            left: 40px;
+        }
+
+        .lantern-small {
+            width: 10%;
+            top: 10px;
+            left: 100px;
+        }
+        
+        .bush-light1 {
+            top: 800px;
+            left: 600px;
+        }
+
+        .bush-dark1{
+            width: 40%;
+            left: 280px;
+        }
+
+        .bush-dark2 {
+            width: 40%;
+        }
+
+        .coin1 {
+            top: 800px;
+            left: 50px;
+        }
+
+        .coin2 {
+            top: 790px;
+            left: 40px;
+        }
+
+        .cat {
+            width: 60%;
+            top: 670px;
+            left: 100px;
+        }
+
+        .kite-firework {
+            width: 50%;
+            top: -30px;
+            left: 250px;
+        }
+
+        .content-container {
+            padding-top: 220px;
+        }
+
+        .title-container {
+            flex-direction: column;
+        }
+
+        .hny {
+            width: 400px;
+            font-size: 70px;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        .year {
+            font-size: 140px;
+            line-height: 100px;
+        }
+
+        .distich {
+            width: 400px;
+            line-height: 32px;
+        }
+
+        .popup {
+            width: 90%
+        }
+        
+        .name-input, .recipient-input {
+            width: 340px;
+        }
+
+        .message-input {
+            width: 340px;
+        }
+
+        .alert-frame {
+            width: 340px;
+        }
+
+        .close {
+            left: 365px;
+        }
     }
 `;
 document.head.appendChild(GreetingStyle);
