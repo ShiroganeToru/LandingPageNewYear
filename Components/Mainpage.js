@@ -117,6 +117,8 @@ MainpageStyle.innerHTML = `
     }
 
     body {
+        width: 100vw;
+        height: 100vh;
         background: #FFDEAB;
         font-family: 'Quicksand', sans-serif;
         overflow: hidden;
@@ -177,7 +179,7 @@ MainpageStyle.innerHTML = `
     .bush-dark1 {
         width: 20%;
         position: absolute;
-        top: 642px;
+        bottom: 0;
         left: 1536px;
         z-index: 2;
     }
@@ -185,7 +187,7 @@ MainpageStyle.innerHTML = `
     .bush-dark2 {
         width: 20%;
         position: absolute;
-        top: 612px;
+        bottom: 0;
         left: 0px;
         z-index: 2;
     }
@@ -201,7 +203,7 @@ MainpageStyle.innerHTML = `
     .bush-light2 {
         width: 15%;
         position: absolute;
-        top: 612px;
+        bottom: 0;
         left: 25px;
         z-index: 1;
     }
@@ -233,6 +235,7 @@ MainpageStyle.innerHTML = `
         position: absolute;
         top: 0px;
         left: 1550px;
+        transform: rotate(-45deg);
     }
     .content-container {
         display: flex;
@@ -240,7 +243,7 @@ MainpageStyle.innerHTML = `
         align-items: center;
         flex-direction: column;
         gap: 20px;
-        padding: 50px 0;
+        padding-top: 100px;
     }
 
     .title-container {
@@ -305,6 +308,311 @@ MainpageStyle.innerHTML = `
         position: absolute;
         top: 420px;
         left: 1200px;
+    }
+
+    @media only screen and (max-width: 1440px) {
+        .lantern-large {
+            width: 15%;
+            top: 100px;
+            left: -100px;
+        }
+
+        .lantern-medium {
+            width: 10%;
+            top: 60px;
+        }
+
+        .lantern-small {
+            width: 5%;
+            top: 30px;
+            left: 150px;
+        }
+        
+        .bush-light1 {
+            top: 700px;
+            left: 1140px;
+        }
+
+        .bush-dark1{
+            left: 1152px;
+        }
+
+        .coin1 {
+            left: 300px;
+        }
+
+        .coin2 {
+            top: 560px;
+            left: 270px;
+        }
+
+        .cat {
+            top: 400px;
+            left: 500px;
+        }
+
+        .kite-firework {
+            top: -50px;
+            left: 1240px;
+        }
+
+        .content-container {
+            padding-top: 150px;
+        }
+
+        .button-go {
+            top: 500px;
+            left: 1000px;
+        }
+    }
+
+    @media only screen and (max-width: 1024px) {
+        .surface {
+            height: 25%;
+        }
+        
+        .lantern-string {
+            width: 25%;
+        }
+        
+        .lantern-large {
+            width: 15%;
+            top: 120px;
+            left: -60px;
+        }
+
+        .lantern-medium {
+            width: 12%;
+            top: 80px;
+            left: 60px;
+        }
+
+        .lantern-small {
+            width: 9%;
+            top: 45px;
+            left: 160px;
+        }
+        
+        .bush-light1 {
+            top: 750px;
+            left: 840px;
+        }
+
+        .bush-dark1{
+            left: 852px;
+        }
+
+        .coin1 {
+            top: 700px;
+            left: 180px;
+        }
+
+        .coin2 {
+            top: 680px;
+            left: 150px;
+        }
+
+        .cat {
+            width: 40%;
+            top: 500px;
+            left: 320px;
+        }
+
+        .kite-firework {
+            top: -30px;
+            left: 800px;
+        }
+
+        .content-container {
+            padding-top: 200px;
+        }
+
+        .hny {
+            width: 335px;
+            font-size: 60px;
+            line-height: 80px;
+        }
+
+        .year {
+            font-size: 160px;
+        }
+
+        .button-go {
+            top: 500px;
+            left: 700px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .surface {
+            height: 20%;
+        }
+        
+        .lantern-string {
+            width: 30%;
+        }
+        
+        .lantern-large {
+            width: 20%;
+            top: 108px;
+            left: -60px;
+        }
+
+        .lantern-medium {
+            width: 15%;
+            top: 73px;
+            left: 60px;
+        }
+
+        .lantern-small {
+            width: 10s%;
+            top: 35px;
+            left: 160px;
+        }
+        
+        .bush-light1 {
+            top: 800px;
+            left: 600px;
+        }
+
+        .bush-dark1{
+            left: 615px;
+        }
+
+        .coin1 {
+            top: 750px;
+            left: 130px;
+        }
+
+        .coin2 {
+            top: 730px;
+            left: 120px;
+        }
+
+        .cat {
+            width: 40%;
+            top: 600px;
+            left: 240px;
+        }
+
+        .kite-firework {
+            width: 40%;
+            top: -30px;
+            left: 500px;
+        }
+
+        .content-container {
+            padding-top: 280px;
+        }
+
+        .hny {
+            width: 335px;
+            font-size: 60px;
+            line-height: 80px;
+        }
+
+        .year {
+            font-size: 160px;
+        }
+
+        .button-go {
+            top: 520px;
+            left: 300px;
+        }
+    }
+
+    @media only screen and (max-width: 425px) {
+        .surface {
+            height: 15%;
+        }
+        
+        .lantern-string {
+            width: 30%;
+        }
+        
+        .lantern-large {
+            width: 30%;
+            top: 60px;
+            left: -60px;
+        }
+
+        .lantern-medium {
+            width: 20%;
+            top: 33px;
+            left: 40px;
+        }
+
+        .lantern-small {
+            width: 10%;
+            top: 10px;
+            left: 100px;
+        }
+        
+        .bush-light1 {
+            top: 800px;
+            left: 600px;
+        }
+
+        .bush-dark1{
+            width: 40%;
+            left: 280px;
+        }
+
+        .bush-dark2 {
+            width: 40%;
+        }
+
+        .coin1 {
+            top: 800px;
+            left: 50px;
+        }
+
+        .coin2 {
+            top: 790px;
+            left: 40px;
+        }
+
+        .cat {
+            width: 60%;
+            top: 670px;
+            left: 100px;
+        }
+
+        .kite-firework {
+            width: 50%;
+            top: -30px;
+            left: 250px;
+        }
+
+        .content-container {
+            padding-top: 220px;
+        }
+
+        .title-container {
+            flex-direction: column;
+        }
+
+        .hny {
+            width: 400px;
+            font-size: 70px;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        .year {
+            font-size: 140px;
+            line-height: 100px;
+        }
+
+        .distich {
+            width: 400px;
+            line-height: 32px;
+        }
+
+        .button-go {
+            top: 570px;
+            left: 100px;
+        }
     }
 `;
 document.head.appendChild(MainpageStyle);
