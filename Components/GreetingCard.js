@@ -75,7 +75,7 @@ GreetingContainer.appendChild(Hny);
 
 const distich = document.createElement("p");
 const distichText = document.createTextNode(
-  "Cung chúc tân xuân - Vạn sự như ý"
+    "Cung chúc tân xuân - Vạn sự như ý"
 );
 distich.setAttribute("class", "distich");
 distich.appendChild(distichText);
@@ -148,6 +148,10 @@ const ButtonClose = new Image();
 ButtonClose.src = "/assets/img/xmark-solid.svg";
 ButtonClose.setAttribute("class", "close");
 FormPopup.appendChild(ButtonClose);
+
+//fetch api
+
+fetch();
 
 const GreetingStyle = document.createElement("style");
 GreetingStyle.innerHTML = `
@@ -453,11 +457,11 @@ document.head.appendChild(GreetingStyle);
 
 //Popup
 document.querySelector(".button-popup").addEventListener("click", function () {
-  document.querySelector(".bg-popup").style.display = "flex";
+    document.querySelector(".bg-popup").style.display = "flex";
 });
 
 document.querySelector(".close").addEventListener("click", function () {
-  document.querySelector(".bg-popup").style.display = "none";
+    document.querySelector(".bg-popup").style.display = "none";
 });
 
 //Limit Character
@@ -467,18 +471,18 @@ var Requirement = 200;
 Limit.textContent = 0 + "/" + 200;
 
 MyText.addEventListener("input", function () {
-  var textLength = MyText.value.length;
-  Limit.textContent = textLength + "/" + Requirement;
+    var textLength = MyText.value.length;
+    Limit.textContent = textLength + "/" + Requirement;
 
-  if (textLength > Requirement) {
-    document.querySelector(".alert").style.display = "inline";
-    Limit.style.color = "red";
-    document.querySelector(".button-confirm").style.cursor = "not-allowed";
-    document.querySelector(".button-confirm").style.opacity = "0.5";
-  } else {
-    document.querySelector(".alert").style.display = "none";
-    Limit.style.color = "white";
-    document.querySelector(".button-confirm").style.cursor = "pointer";
-    document.querySelector(".button-confirm").style.opacity = "1";
-  }
+    if (textLength > Requirement) {
+        document.querySelector(".alert").style.display = "inline";
+        Limit.style.color = "red";
+        document.querySelector(".button-confirm").style.cursor = "not-allowed";
+        document.querySelector(".button-confirm").style.opacity = "0.5";
+    } else {
+        document.querySelector(".alert").style.display = "none";
+        Limit.style.color = "white";
+        document.querySelector(".button-confirm").style.cursor = "pointer";
+        document.querySelector(".button-confirm").style.opacity = "1";
+    }
 });
