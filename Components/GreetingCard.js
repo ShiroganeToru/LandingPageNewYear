@@ -177,9 +177,29 @@ const CardOutsideFront = new Image();
 CardOutsideFront.src = "/assets/img/Artboard 1.png";
 CardFaceFront.appendChild(CardOutsideFront);
 
-const CardInsideFront = new Image();
-CardInsideFront.src = "/assets/img/Artboard 2.png";
-CardFaceBack.appendChild(CardInsideFront);
+const FormResults = document.createElement("div");
+FormResults.setAttribute("class","form-result");
+CardContent.appendChild(FormResults);
+
+const CardInsideBack = new Image();
+CardInsideBack.src = "/assets/img/Artboard 2.png";
+CardContent.appendChild(CardInsideBack);
+
+const OtherNameResult = document.createElement("p");
+OtherNameResult.setAttribute("class","output othername");
+OtherNameResult.innerText = "";
+FormResults.appendChild(OtherNameResult);
+
+const TextResult = document.createElement("p");
+TextResult.setAttribute("class","output greeting-text");
+TextResult.innerText = "";
+FormResults.appendChild(TextResult);
+
+const NameResult = document.createElement("p");
+NameResult.setAttribute("class","output sender-name");
+NameResult.innerText = "";
+FormResults.appendChild(NameResult);
+
 
 const GreetingStyle = document.createElement("style");
 GreetingStyle.innerHTML = `
@@ -494,7 +514,7 @@ GreetingStyle.innerHTML = `
     }
 
     .card {
-        width: 876px;
+        width: 438px;
         height: 613px;
         position: absolute;
         margin: auto;
@@ -507,6 +527,75 @@ GreetingStyle.innerHTML = `
         display: none;
     }
 
+    .card-inner {
+        width: 100%;
+        height: 100%;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .card-inner.is-flipped {
+        transform: rotateY(180deg);
+    }
+
+    .card-face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        overflow: hidden;
+        border-radius: 16px;
+        box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .front {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-face.back {
+        transform: rotateY(180deg);
+    }
+
+    .form-result {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        gap: 20px;
+    }
+    
+    .card-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .output {
+        width: 90%;
+        color: #D20000;
+        font-style: bold;
+    }
+
+    .othername, .greeting-text {
+        text-align: left;
+    }
+
+    .othername {
+        font-weight: 700;
+    }
+
+    .sender-name {
+        text-align: right;
+        font-weight: 700;
+    }
 
     @media only screen and (max-width: 1440px) {
         .lantern-large {
@@ -904,25 +993,11 @@ document.querySelector(".button-confirm").addEventListener("click", function () 
     document.querySelector(".card").style.display = "block";
 });
 
-//form results
-const FormResults = document.createElement("div");
-FormResults.style.width = "500px";
-FormResults.style.height = "500px";
-FormResults.style.backgroundColor = "white";
-FormResults.style.display = "none";
-GreetingContainer.appendChild(FormResults);
-const TitleResults = document.createElement("h4");
-TitleResults.innerText = "Results";
-FormResults.appendChild(TitleResults);
-const NameResult = document.createElement("p");
-NameResult.innerText = "";
-FormResults.appendChild(NameResult);
-const OtherNameResult = document.createElement("p");
-OtherNameResult.innerText = "";
-FormResults.appendChild(OtherNameResult);
-const TextResult = document.createElement("p");
-TextResult.innerText = "";
-FormResults.appendChild(TextResult);
+const cardflip = document.querySelector(".card-inner");
+
+cardflip.addEventListener("click", function (e) {
+  cardflip.classList.toggle('is-flipped');
+});
 
 //print results
 FormInput.addEventListener("submit", (e) => {
@@ -937,32 +1012,11 @@ ButtonConfirm.addEventListener("click", function (e) {
     FormPopup.style.display = 'none';
     BackgroundPopup.style.display = 'none';
     ContentContainer.style.display = 'none';
-    ground.style.display = 'none';
-    Bush1.style.display = 'none';
-    Bush2.style.display = 'none';
-    Bush3.style.display = 'none';
-    Bush4.style.display = 'none';
     Cat.style.display = 'none';
     Coin1.style.display = 'none';
     Coin2.style.display = 'none';
 
-    if (yname == "") {
-        NameResult.innerText = "Đội ngũ dev Front-End của F-Code";
-    }
-
-    if (otherName == "") {
-        OtherNameResult.innerText = "Người đã tham gia website của bọn mình";
-    }
-
-    if (message == "") {
-        TextResult.innerText = "Nhân dịp năm mới, bọn mình xin chúc bạn có một năm mới vui vẻ, vạn sự như ý, mọi việc đều thuận lợi";
-    }
-
-    FormResults.style.display = 'flex';
-    FormResults.style.flexDirection = 'column';
     NameResult.innerText = yname;
-    OtherNameResult.innerText = otherName;
+    OtherNameResult.innerText = "Gửi bạn " + otherName;
     TextResult.innerText = message;
-
-    
 })
