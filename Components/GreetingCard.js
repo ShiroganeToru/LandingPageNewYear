@@ -153,6 +153,54 @@ ButtonClose.src = "/assets/img/xmark-solid.svg";
 ButtonClose.setAttribute("class", "close");
 FormPopup.appendChild(ButtonClose);
 
+const Card = document.createElement("div");
+Card.setAttribute('class','card');
+GreetingContainer.appendChild(Card);
+
+const CardInner = document.createElement("div");
+CardInner.setAttribute("class","card-inner");
+Card.appendChild(CardInner);
+
+const CardFaceFront = document.createElement("div");
+CardFaceFront.setAttribute("class","card-face front");
+CardInner.appendChild(CardFaceFront);
+
+const CardFaceBack = document.createElement("div");
+CardFaceBack.setAttribute("class","card-face back");
+CardInner.appendChild(CardFaceBack);
+
+const CardContent = document.createElement("div");
+CardContent.setAttribute("class","card-content");
+CardFaceBack.appendChild(CardContent);
+
+const CardOutsideFront = new Image();
+CardOutsideFront.src = "/assets/img/Artboard 1.png";
+CardFaceFront.appendChild(CardOutsideFront);
+
+const FormResults = document.createElement("div");
+FormResults.setAttribute("class","form-result");
+CardContent.appendChild(FormResults);
+
+const CardInsideBack = new Image();
+CardInsideBack.src = "/assets/img/Artboard 2.png";
+CardContent.appendChild(CardInsideBack);
+
+const OtherNameResult = document.createElement("p");
+OtherNameResult.setAttribute("class","output othername");
+OtherNameResult.innerText = "";
+FormResults.appendChild(OtherNameResult);
+
+const TextResult = document.createElement("p");
+TextResult.setAttribute("class","output greeting-text");
+TextResult.innerText = "";
+FormResults.appendChild(TextResult);
+
+const NameResult = document.createElement("p");
+NameResult.setAttribute("class","output sender-name");
+NameResult.innerText = "";
+FormResults.appendChild(NameResult);
+
+
 const GreetingStyle = document.createElement("style");
 GreetingStyle.innerHTML = `
     * {
@@ -463,6 +511,90 @@ GreetingStyle.innerHTML = `
         left: 1390px;
 
         cursor: pointer;
+    }
+
+    .card {
+        width: 438px;
+        height: 613px;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        perspective: 1200px;
+        transition: 1s;
+        display: none;
+    }
+
+    .card-inner {
+        width: 100%;
+        height: 100%;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .card-inner.is-flipped {
+        transform: rotateY(180deg);
+    }
+
+    .card-face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        overflow: hidden;
+        border-radius: 16px;
+        box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .front {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-face.back {
+        transform: rotateY(180deg);
+    }
+
+    .form-result {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        gap: 20px;
+    }
+    
+    .card-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .output {
+        width: 90%;
+        color: #D20000;
+        font-style: bold;
+    }
+
+    .othername, .greeting-text {
+        text-align: left;
+    }
+
+    .othername {
+        font-weight: 700;
+    }
+
+    .sender-name {
+        text-align: right;
+        font-weight: 700;
     }
 
     @media only screen and (max-width: 1440px) {
@@ -856,22 +988,16 @@ MyText.addEventListener("input", function () {
     }
 });
 
-//form results
-const FormResults = document.createElement("div");
-FormResults.style.width = "500px";
-FormResults.style.height = "500px";
-FormResults.style.backgroundColor = "white";
-FormResults.style.display = "none";
-GreetingContainer.appendChild(FormResults);
-const TitleResults = document.createElement("h4");
-TitleResults.innerText = "Results";
-FormResults.appendChild(TitleResults);
-const NameResult = document.createElement("p");
-FormResults.appendChild(NameResult);
-const OtherNameResult = document.createElement("p");
-FormResults.appendChild(OtherNameResult);
-const TextResult = document.createElement("p");
-FormResults.appendChild(TextResult);
+//Greeting Card
+document.querySelector(".button-confirm").addEventListener("click", function () {
+    document.querySelector(".card").style.display = "block";
+});
+
+const cardflip = document.querySelector(".card-inner");
+
+cardflip.addEventListener("click", function (e) {
+  cardflip.classList.toggle('is-flipped');
+});
 
 //print results
 FormInput.addEventListener("submit", (e) => {
@@ -882,11 +1008,53 @@ ButtonConfirm.addEventListener("click", function (e) {
     const yname = NameInput.value;
     const otherName = RecipientInput.value;
     const message = MessageInput.value;
+
     FormPopup.style.display = 'none';
     BackgroundPopup.style.display = 'none';
-    FormResults.style.display = 'flex';
-    FormResults.style.flexDirection = 'column';
+    ContentContainer.style.display = 'none';
+    Cat.style.display = 'none';
+    Coin1.style.display = 'none';
+    Coin2.style.display = 'none';
+
     NameResult.innerText = yname;
-    OtherNameResult.innerText = otherName;
+    OtherNameResult.innerText = "Gửi đến " + otherName;
     TextResult.innerText = message;
 })
+
+//Sakura Fall
+const addSakura = () => {
+    const random = (min, max) => Math.random() * (max - min) + min;
+    let screenWidth = window.innerWidth;
+    let screenHeight = window.innerHeight;
+    let sakura = document.createElement('div');
+    sakura.style.position = 'absolute';
+    sakura.style.top = "-2px";
+    sakura.style.right = random(0, screenWidth) + "px";
+    sakura.style.width = "10px";
+    sakura.style.height = "10px";
+    sakura.style.backgroundColor = "#EBBEC8";
+    sakura.style.borderRadius = "30% 70% 70% 30% / 30% 30% 70% 70%";
+    sakura.style.zIndex = "10";
+    const sakuraFalling = () => {
+        sakura.style.top = parseInt(sakura.style.top) + 2 + "px";
+        sakura.style.right = parseInt(sakura.style.right) + 1 + "px";
+        if (parseInt(sakura.style.top) > screenHeight) {
+            sakura.style.opacity = 0;
+            sakura.style.transition = "opacity 500ms";
+        }
+        window.requestAnimationFrame(sakuraFalling);
+    };
+    window.requestAnimationFrame(sakuraFalling);
+    GreetingContainer.appendChild(sakura);
+};
+
+function callBackSakura() {
+    for (let i = 0; i < 100; i++) {
+        setTimeout(addSakura, i * 100);
+    }
+}
+function callSakuraFalling() {
+    callBackSakura();
+    setInterval(callBackSakura, 11500);
+}
+callSakuraFalling();

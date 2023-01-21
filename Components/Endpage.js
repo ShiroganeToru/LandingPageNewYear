@@ -1,114 +1,88 @@
-const MainpageContainer = document.createElement("section");
-MainpageContainer.setAttribute("class", "mainpage-container");
-document.body.appendChild(MainpageContainer);
-
-const BackgroundContainer = document.createElement('div');
-BackgroundContainer.setAttribute('class','bg-container');
-MainpageContainer.appendChild(BackgroundContainer);
+const EndpageContainer = document.createElement("section");
+EndpageContainer.setAttribute("class", "endpage-container");
+document.body.appendChild(EndpageContainer);
 
 const ground = new Image();
 ground.src = "/assets/img/Vector 2.png";
-ground.setAttribute('class','surface')
-BackgroundContainer.appendChild(ground);
+ground.setAttribute("class", "surface");
+EndpageContainer.appendChild(ground);
 
 const LanternString = new Image();
 LanternString.src = "/assets/img/Vector 1.png";
-LanternString.setAttribute('class','lantern-string');
-BackgroundContainer.appendChild(LanternString);
+LanternString.setAttribute("class", "lantern-string");
+EndpageContainer.appendChild(LanternString);
 
 const LanternSmall = new Image();
 LanternSmall.src = "/assets/img/Artboard 32.png";
-LanternSmall.setAttribute('class','lantern-small');
-BackgroundContainer.appendChild(LanternSmall);
+LanternSmall.setAttribute("class", "lantern-small");
+EndpageContainer.appendChild(LanternSmall);
 
 const LanternMedium = new Image();
 LanternMedium.src = "/assets/img/Artboard 32.png";
-LanternMedium.setAttribute('class','lantern-medium');
-BackgroundContainer.appendChild(LanternMedium);
+LanternMedium.setAttribute("class", "lantern-medium");
+EndpageContainer.appendChild(LanternMedium);
 
 const LanternLarge = new Image();
 LanternLarge.src = "/assets/img/Artboard 32.png";
-LanternLarge.setAttribute('class','lantern-large');
-BackgroundContainer.appendChild(LanternLarge);
+LanternLarge.setAttribute("class", "lantern-large");
+EndpageContainer.appendChild(LanternLarge);
 
 const Bush1 = new Image();
 Bush1.src = "/assets/img/Artboard 36 2.png";
-Bush1.setAttribute('class','bush-dark1');
-BackgroundContainer.appendChild(Bush1);
+Bush1.setAttribute("class", "bush-dark1");
+EndpageContainer.appendChild(Bush1);
 
 const Bush2 = new Image();
 Bush2.src = "/assets/img/Artboard 36 1.png";
-Bush2.setAttribute('class','bush-dark2');
-BackgroundContainer.appendChild(Bush2);
+Bush2.setAttribute("class", "bush-dark2");
+EndpageContainer.appendChild(Bush2);
 
 const Bush3 = new Image();
 Bush3.src = "/assets/img/Artboard 39 1.png";
-Bush3.setAttribute('class','bush-light1');
-BackgroundContainer.appendChild(Bush3);
+Bush3.setAttribute("class", "bush-light1");
+EndpageContainer.appendChild(Bush3);
 
 const Bush4 = new Image();
 Bush4.src = "/assets/img/Artboard 39 2.png";
-Bush4.setAttribute('class','bush-light2');
-BackgroundContainer.appendChild(Bush4);
+Bush4.setAttribute("class", "bush-light2");
+EndpageContainer.appendChild(Bush4);
 
 const Cat = new Image();
-Cat.src = "/assets/img/Cat/Artboard 14.png";
-Cat.setAttribute('class','cat');
-BackgroundContainer.appendChild(Cat);
+Cat.src = "/assets/img/Cat/Artboard 12.png";
+Cat.setAttribute("class", "cat");
+EndpageContainer.appendChild(Cat);
 
 const Coin1 = new Image();
 Coin1.src = "/assets/img/Artboard 35.png";
-Coin1.setAttribute('class','coin1');
-BackgroundContainer.appendChild(Coin1);
+Coin1.setAttribute("class", "coin1");
+EndpageContainer.appendChild(Coin1);
 
 const Coin2 = new Image();
 Coin2.src = "/assets/img/Artboard 35.png";
-Coin2.setAttribute('class','coin2');
-BackgroundContainer.appendChild(Coin2);
+Coin2.setAttribute("class", "coin2");
+EndpageContainer.appendChild(Coin2);
 
 const KiteFirework = new Image();
 KiteFirework.src = "/assets/img/Artboard 33.png";
-KiteFirework.setAttribute('class','kite-firework');
-BackgroundContainer.appendChild(KiteFirework);
+KiteFirework.setAttribute("class", "kite-firework");
+EndpageContainer.appendChild(KiteFirework);
 
-const ContentContainer = document.createElement('div');
-ContentContainer.setAttribute('class','content-container');
-MainpageContainer.appendChild(ContentContainer);
+const ContentContainer = document.createElement("div");
+ContentContainer.setAttribute("class","content-container");
+EndpageContainer.appendChild(ContentContainer);
 
-const TitleContainer = document.createElement('div');
-TitleContainer.setAttribute('class','title-container');
-ContentContainer.appendChild(TitleContainer);
+const Thanks = document.createElement("h1");
+Thanks.setAttribute("class","thanks");
+Thanks.innerText = "Cảm ơn đã tham gia"
+ContentContainer.appendChild(Thanks);
 
-const Hny = document.createElement("h1");
-const HnyText = document.createTextNode("Chúc mừng năm mới");
-Hny.setAttribute("class", "hny");
-Hny.appendChild(HnyText);
-TitleContainer.appendChild(Hny);
+const Subtitle = document.createElement("p");
+Subtitle.setAttribute("class","subtitle");
+Subtitle.innerText = "Thay mặt đội ngũ dev của CLB F-Code, tụi mình xin gửi lời chúc đến tất cả các bạn có một năm mới An Khang Thịnh Vượng, Mã Đáo Thành Công";
+ContentContainer.appendChild(Subtitle);
 
-const Year = document.createElement("h1");
-const YearNumber = document.createTextNode("2023");
-Year.setAttribute("class", "year");
-Year.appendChild(YearNumber);
-TitleContainer.appendChild(Year);
-
-const distich = document.createElement("p");
-const distichText = document.createTextNode(
-  "Cung chúc tân xuân - Vạn sự như ý"
-);
-distich.setAttribute("class", "distich");
-distich.appendChild(distichText);
-ContentContainer.appendChild(distich);
-
-const buttonGo = document.createElement("button");
-buttonGo.setAttribute("class", "button-go");
-const buttonIcon = document.createElement("i");
-buttonIcon.setAttribute("class", "fa-solid fa-play");
-buttonGo.appendChild(buttonIcon);
-buttonGo.innerText = "Đi thắp hương đầu năm nào!";
-MainpageContainer.appendChild(buttonGo);
-
-const MainpageStyle = document.createElement("style");
-MainpageStyle.innerHTML = `
+const EndpageStyle = document.createElement("style");
+EndpageStyle.innerHTML = `
     * {
         margin: 0;
         padding: 0;
@@ -117,24 +91,28 @@ MainpageStyle.innerHTML = `
     }
 
     body {
+        background: #FFDEAB;
         width: 100vw;
         height: 100vh;
-        background: #FFDEAB;
-        font-family: 'Quicksand', sans-serif;
         overflow: hidden;
-        background: #FFDEAB;
     }
 
-    .mainpage-container {
+    .greeting-container {
         width: 100%;
-        height: 100%;
-        overflow: hidden;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .bg-container {
         width: 100%;
         height: 100vh;
         position: absolute;
+        z-index: 0;
     }
 
     .surface {
@@ -188,7 +166,7 @@ MainpageStyle.innerHTML = `
         width: 20%;
         position: absolute;
         bottom: 0;
-        left: 0px;
+        left: 0;
         z-index: 2;
     }
 
@@ -209,10 +187,10 @@ MainpageStyle.innerHTML = `
     }
 
     .cat {
-        width: 30%;
+        width: 25%;
         position: absolute;
-        top: 323px;
-        left: 650px;
+        top: 370px;
+        left: 700px;
         z-index: 3;
     }
 
@@ -234,80 +212,40 @@ MainpageStyle.innerHTML = `
         width: 20%;
         position: absolute;
         top: 0px;
-        left: 1550px;
-        transform: rotate(-45deg);
+        left: 1500px;
     }
+
     .content-container {
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         flex-direction: column;
-        gap: 20px;
-        padding-top: 100px;
     }
+    
+    .thanks {
+        margin-top: 50px;
 
-    .title-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .hny {
-        width: 500px;
         font-style: normal;
         font-weight: 700;
         font-size: 90px;
-        line-height: 100px;
-        text-align: right;
+        line-height: 110px;
+        text-align: center;
         letter-spacing: 0.02em;
         color: #D20000;
     }
+    
+    .subtitle {
+        width: 660px;
+        height: 55px;
 
-    .year {
-        font-style: normal;
-        font-weight: 700;
-        font-size: 210px;
-        line-height: 160px;
-        text-align: right;
-        letter-spacing: 0.02em;
-        color: #D20000;
-    }
-
-    .distich {
         font-style: normal;
         font-weight: 500;
         font-size: 32px;
-        line-height: 25px;
+        line-height: 32px;
         text-align: center;
         letter-spacing: 0.02em;
 
         color: #FF9B71;
-    }
-
-    .button-go {
-        width: 220px;
-        height: 90px;
-
-        background-color: #FA9B20;
-        border: none;
-        border-radius: 20px;
-        color: white;
-        padding: 8px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        cursor: pointer;
-        
-        font-family: 'Quicksand';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 30px;
-
-        position: absolute;
-        top: 420px;
-        left: 1200px;
     }
 
     @media only screen and (max-width: 1440px) {
@@ -347,6 +285,7 @@ MainpageStyle.innerHTML = `
         }
 
         .cat {
+            width: 30%;
             top: 400px;
             left: 500px;
         }
@@ -354,15 +293,6 @@ MainpageStyle.innerHTML = `
         .kite-firework {
             top: -50px;
             left: 1240px;
-        }
-
-        .content-container {
-            padding-top: 150px;
-        }
-
-        .button-go {
-            top: 500px;
-            left: 1000px;
         }
     }
 
@@ -422,25 +352,6 @@ MainpageStyle.innerHTML = `
             top: -30px;
             left: 800px;
         }
-
-        .content-container {
-            padding-top: 200px;
-        }
-
-        .hny {
-            width: 335px;
-            font-size: 60px;
-            line-height: 80px;
-        }
-
-        .year {
-            font-size: 160px;
-        }
-
-        .button-go {
-            top: 500px;
-            left: 700px;
-        }
     }
 
     @media only screen and (max-width: 768px) {
@@ -499,25 +410,6 @@ MainpageStyle.innerHTML = `
             width: 40%;
             top: -30px;
             left: 500px;
-        }
-
-        .content-container {
-            padding-top: 280px;
-        }
-
-        .hny {
-            width: 335px;
-            font-size: 60px;
-            line-height: 80px;
-        }
-
-        .year {
-            font-size: 160px;
-        }
-
-        .button-go {
-            top: 520px;
-            left: 300px;
         }
     }
 
@@ -591,33 +483,12 @@ MainpageStyle.innerHTML = `
         .title-container {
             flex-direction: column;
         }
-
-        .hny {
-            width: 400px;
-            font-size: 70px;
-            line-height: 60px;
-            text-align: center;
-        }
-
-        .year {
-            font-size: 140px;
-            line-height: 100px;
-        }
-
-        .distich {
-            width: 400px;
-            line-height: 32px;
-        }
-
-        .button-go {
-            top: 570px;
-            left: 100px;
-        }
     }
 `;
-document.head.appendChild(MainpageStyle);
+document.head.appendChild(EndpageStyle);
 
 //Function
+
 const addSakura = () => {
     const random = (min, max) => Math.random() * (max - min) + min;
     let screenWidth = window.innerWidth;
