@@ -3,7 +3,7 @@ GreetingContainer.setAttribute("class", "greeting-container");
 document.body.appendChild(GreetingContainer);
 
 const ContentContainer = document.createElement("div");
-ContentContainer.setAttribute("class","content-container");
+ContentContainer.setAttribute("class", "content-container");
 GreetingContainer.appendChild(ContentContainer);
 
 const Hny = document.createElement("h1");
@@ -14,7 +14,7 @@ ContentContainer.appendChild(Hny);
 
 const distich = document.createElement("p");
 const distichText = document.createTextNode(
-  "Cung chúc tân xuân - Vạn sự như ý"
+    "Cung chúc tân xuân - Vạn sự như ý"
 );
 distich.setAttribute("class", "distich");
 distich.appendChild(distichText);
@@ -152,6 +152,34 @@ const ButtonClose = new Image();
 ButtonClose.src = "/assets/img/xmark-solid.svg";
 ButtonClose.setAttribute("class", "close");
 FormPopup.appendChild(ButtonClose);
+
+const Card = document.createElement("div");
+Card.setAttribute('class','card');
+GreetingContainer.appendChild(Card);
+
+const CardInner = document.createElement("div");
+CardInner.setAttribute("class","card-inner");
+Card.appendChild(CardInner);
+
+const CardFaceFront = document.createElement("div");
+CardFaceFront.setAttribute("class","card-face front");
+CardInner.appendChild(CardFaceFront);
+
+const CardFaceBack = document.createElement("div");
+CardFaceBack.setAttribute("class","card-face back");
+CardInner.appendChild(CardFaceBack);
+
+const CardContent = document.createElement("div");
+CardContent.setAttribute("class","card-content");
+CardFaceBack.appendChild(CardContent);
+
+const CardOutsideFront = new Image();
+CardOutsideFront.src = "/assets/img/Artboard 1.png";
+CardFaceFront.appendChild(CardOutsideFront);
+
+const CardInsideFront = new Image();
+CardInsideFront.src = "/assets/img/Artboard 2.png";
+CardFaceBack.appendChild(CardInsideFront);
 
 const GreetingStyle = document.createElement("style");
 GreetingStyle.innerHTML = `
@@ -464,6 +492,21 @@ GreetingStyle.innerHTML = `
 
         cursor: pointer;
     }
+
+    .card {
+        width: 876px;
+        height: 613px;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        perspective: 1200px;
+        transition: 1s;
+        display: none;
+    }
+
 
     @media only screen and (max-width: 1440px) {
         .lantern-large {
@@ -826,11 +869,11 @@ document.head.appendChild(GreetingStyle);
 
 //Popup
 document.querySelector(".button-popup").addEventListener("click", function () {
-  document.querySelector(".bg-popup").style.display = "flex";
+    document.querySelector(".bg-popup").style.display = "flex";
 });
 
 document.querySelector(".close").addEventListener("click", function () {
-  document.querySelector(".bg-popup").style.display = "none";
+    document.querySelector(".bg-popup").style.display = "none";
 });
 
 //Limit Character
@@ -840,18 +883,86 @@ var Requirement = 200;
 Limit.textContent = 0 + "/" + 200;
 
 MyText.addEventListener("input", function () {
-  var textLength = MyText.value.length;
-  Limit.textContent = textLength + "/" + Requirement;
+    var textLength = MyText.value.length;
+    Limit.textContent = textLength + "/" + Requirement;
 
-  if (textLength > Requirement) {
-    document.querySelector(".alert").style.display = "inline";
-    Limit.style.color = "red";
-    document.querySelector(".button-confirm").style.cursor = "not-allowed";
-    document.querySelector(".button-confirm").style.opacity = "0.5";
-  } else {
-    document.querySelector(".alert").style.display = "none";
-    Limit.style.color = "white";
-    document.querySelector(".button-confirm").style.cursor = "pointer";
-    document.querySelector(".button-confirm").style.opacity = "1";
-  }
+    if (textLength > Requirement) {
+        document.querySelector(".alert").style.display = "inline";
+        Limit.style.color = "red";
+        document.querySelector(".button-confirm").style.cursor = "not-allowed";
+        document.querySelector(".button-confirm").style.opacity = "0.5";
+    } else {
+        document.querySelector(".alert").style.display = "none";
+        Limit.style.color = "white";
+        document.querySelector(".button-confirm").style.cursor = "pointer";
+        document.querySelector(".button-confirm").style.opacity = "1";
+    }
 });
+
+//Greeting Card
+document.querySelector(".button-confirm").addEventListener("click", function () {
+    document.querySelector(".card").style.display = "block";
+});
+
+//form results
+const FormResults = document.createElement("div");
+FormResults.style.width = "500px";
+FormResults.style.height = "500px";
+FormResults.style.backgroundColor = "white";
+FormResults.style.display = "none";
+GreetingContainer.appendChild(FormResults);
+const TitleResults = document.createElement("h4");
+TitleResults.innerText = "Results";
+FormResults.appendChild(TitleResults);
+const NameResult = document.createElement("p");
+NameResult.innerText = "";
+FormResults.appendChild(NameResult);
+const OtherNameResult = document.createElement("p");
+OtherNameResult.innerText = "";
+FormResults.appendChild(OtherNameResult);
+const TextResult = document.createElement("p");
+TextResult.innerText = "";
+FormResults.appendChild(TextResult);
+
+//print results
+FormInput.addEventListener("submit", (e) => {
+    e.preventDefault();
+})
+ButtonConfirm.addEventListener("click", function (e) {
+    e.preventDefault();
+    const yname = NameInput.value;
+    const otherName = RecipientInput.value;
+    const message = MessageInput.value;
+
+    FormPopup.style.display = 'none';
+    BackgroundPopup.style.display = 'none';
+    ContentContainer.style.display = 'none';
+    ground.style.display = 'none';
+    Bush1.style.display = 'none';
+    Bush2.style.display = 'none';
+    Bush3.style.display = 'none';
+    Bush4.style.display = 'none';
+    Cat.style.display = 'none';
+    Coin1.style.display = 'none';
+    Coin2.style.display = 'none';
+
+    if (yname == "") {
+        NameResult.innerText = "Đội ngũ dev Front-End của F-Code";
+    }
+
+    if (otherName == "") {
+        OtherNameResult.innerText = "Người đã tham gia website của bọn mình";
+    }
+
+    if (message == "") {
+        TextResult.innerText = "Nhân dịp năm mới, bọn mình xin chúc bạn có một năm mới vui vẻ, vạn sự như ý, mọi việc đều thuận lợi";
+    }
+
+    FormResults.style.display = 'flex';
+    FormResults.style.flexDirection = 'column';
+    NameResult.innerText = yname;
+    OtherNameResult.innerText = otherName;
+    TextResult.innerText = message;
+
+    
+})
