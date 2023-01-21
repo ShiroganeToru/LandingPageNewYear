@@ -239,7 +239,7 @@ PagodaStyle.innerHTML = `
         position: absolute;
         z-index: 6;
         left: 5px;
-        top: 20%;
+        top: 60%;
     }
     .cat {
         position: relative;
@@ -364,7 +364,7 @@ PagodaStyle.innerHTML = `
             top: 80%;
         }
         .cat-container {
-            top: 30%;
+            top: 70%;
         }
         .fortune {
             top: 70%;
@@ -379,7 +379,7 @@ PagodaStyle.innerHTML = `
         }
         
         .cat-container {
-            top: 10%;
+            top: 60%;
         }
         .fortune {
             top: 60%;
@@ -407,10 +407,10 @@ PagodaStyle.innerHTML = `
     }
     @media only screen and (max-width: 913px) {
         .cat-container {
-            top: 37%;
+            top: 60%;
         }
         .button-pray-div {
-            top: 50%;
+            top: 90%;
         }
         .hand-pray-div {
             top: 65%;
@@ -418,7 +418,7 @@ PagodaStyle.innerHTML = `
     }
     @media only screen and (max-width: 900px) {
         .cat-container {
-            top: 33%;
+            top: 60%;
         }
         .pagoda {
             width: 400px;
@@ -431,7 +431,7 @@ PagodaStyle.innerHTML = `
     }
     @media only screen and (max-width: 840px) {
         .cat-container {
-            top: 33%;
+            top: 60%;
         }
         .pagoda {
             width: 380px;
@@ -444,7 +444,7 @@ PagodaStyle.innerHTML = `
     }
     @media only screen and (max-width: 769px) {
         .cat-container {
-            top: 28%;
+            top: 60%;
         }
         .button-pray-div {
             top: 60%;
@@ -563,8 +563,11 @@ PagodaStyle.innerHTML = `
             right: 6.8em;
             width: 3em;
         }
+        .cat-container {
+            top: 70%;
+        }
         .cat {
-            width: 11em;
+            width: 10em;
         }
         .fortune {
             width: 8em;
@@ -576,7 +579,7 @@ PagodaStyle.innerHTML = `
         }
         
         .cat-container {
-            top: 30%;
+            top: 75%;
         }
         .fortune {
             top: 75%;
@@ -604,7 +607,7 @@ PagodaStyle.innerHTML = `
     }
     @media only screen and (max-width: 415px) {
         .cat-container {
-            top: 38%;
+            top: 75%;
         }
         .fortune {
             top: 75%;
@@ -678,7 +681,7 @@ PagodaStyle.innerHTML = `
         }
         .cat-container {
             left: 50%;
-            top: 30%;
+            top: 70%;
         }
         .fortune-pray-div {
             top: 70%;

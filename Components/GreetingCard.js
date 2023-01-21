@@ -153,6 +153,11 @@ ButtonClose.src = "./assets/img/xmark-solid.svg";
 ButtonClose.setAttribute("class", "close");
 FormPopup.appendChild(ButtonClose);
 
+const Guide = document.createElement("h1");
+Guide.innerText = "Click vào tấm thiệp";
+Guide.setAttribute('class','guide');
+GreetingContainer.appendChild(Guide);
+
 const Card = document.createElement("div");
 Card.setAttribute('class','card');
 GreetingContainer.appendChild(Card);
@@ -511,6 +516,19 @@ GreetingStyle.innerHTML = `
         left: 1390px;
 
         cursor: pointer;
+    }
+
+    .guide {
+        margin-top: 50px;
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 70px;
+        line-height: 100px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: #D20000;
+        display: none;
     }
 
     .card {
@@ -991,6 +1009,7 @@ MyText.addEventListener("input", function () {
 //Greeting Card
 document.querySelector(".button-confirm").addEventListener("click", function () {
     document.querySelector(".card").style.display = "block";
+    document.querySelector(".guide").style.display = "block";
 });
 
 const cardflip = document.querySelector(".card-inner");

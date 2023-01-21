@@ -58,6 +58,8 @@ function scriptRemove(id) {
   rms.remove();
   const x = document.getElementsByTagName("section")[0];
   document.body.removeChild(x);
+  const y = document.getElementsByTagName("style")[0];
+  document.head.removeChild(y);
 }
 
 const slidePage = [
@@ -85,6 +87,10 @@ const slidePage = [
     path: "./Components/GreetingCard.js",
     id: "script6",
   },
+  {
+    path: "./Components/Endpage.js",
+    id: "script7",
+  }
 ];
 let slideCounter = 0;
 
