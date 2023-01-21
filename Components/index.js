@@ -72,7 +72,7 @@ const slidePage = [
     id: "script2",
   },
   {
-    path: "./Components/MainPage.js",
+    path: "./Components/Mainpage.js",
     id: "script3",
   },
   {
