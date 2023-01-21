@@ -62,27 +62,27 @@ function scriptRemove(id) {
 
 const slidePage = [
   {
-    path: "/Components/Countdown.js",
+    path: "./Components/Countdown.js",
     id: "script1",
   },
   {
-    path: "/Components/LoadingPage.js",
+    path: "./Components/LoadingPage.js",
     id: "script2",
   },
   {
-    path: "/Components/MainPage.js",
+    path: "./Components/MainPage.js",
     id: "script3",
   },
   {
-    path: "/Components/Pagoda.js",
+    path: "./Components/Pagoda.js",
     id: "script4",
   },
   {
-    path: "/Components/Wishing.js",
+    path: "./Components/Wishing.js",
     id: "script5",
   },
   {
-    path: "/Components/GreetingCard.js",
+    path: "./Components/GreetingCard.js",
     id: "script6",
   },
 ];
@@ -90,8 +90,8 @@ let slideCounter = 0;
 
 const btnLft = new Image();
 const btnRgt = new Image();
-btnLft.src = "/assets/img/btn-left.png";
-btnRgt.src = "/assets/img/btn-right.png";
+btnLft.src = "./assets/img/btn-left.png";
+btnRgt.src = "./assets/img/btn-right.png";
 btnLft.className = "btn-lft";
 btnRgt.className = "btn-rgt";
 const slide = document.createElement("div");
