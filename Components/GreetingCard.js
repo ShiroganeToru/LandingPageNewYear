@@ -29,67 +29,67 @@ buttonCreate.innerText = "Gửi lời chúc";
 ContentContainer.appendChild(buttonCreate);
 
 const ground = new Image();
-ground.src = "/assets/img/Vector 2.png";
+ground.src = "./assets/img/Vector 2.png";
 ground.setAttribute("class", "surface");
 GreetingContainer.appendChild(ground);
 
 const LanternString = new Image();
-LanternString.src = "/assets/img/Vector 1.png";
+LanternString.src = "./assets/img/Vector 1.png";
 LanternString.setAttribute("class", "lantern-string");
 GreetingContainer.appendChild(LanternString);
 
 const LanternSmall = new Image();
-LanternSmall.src = "/assets/img/Artboard 32.png";
+LanternSmall.src = "./assets/img/Artboard 32.png";
 LanternSmall.setAttribute("class", "lantern-small");
 GreetingContainer.appendChild(LanternSmall);
 
 const LanternMedium = new Image();
-LanternMedium.src = "/assets/img/Artboard 32.png";
+LanternMedium.src = "./assets/img/Artboard 32.png";
 LanternMedium.setAttribute("class", "lantern-medium");
 GreetingContainer.appendChild(LanternMedium);
 
 const LanternLarge = new Image();
-LanternLarge.src = "/assets/img/Artboard 32.png";
+LanternLarge.src = "./assets/img/Artboard 32.png";
 LanternLarge.setAttribute("class", "lantern-large");
 GreetingContainer.appendChild(LanternLarge);
 
 const Bush1 = new Image();
-Bush1.src = "/assets/img/Artboard 36 2.png";
+Bush1.src = "./assets/img/Artboard 36 2.png";
 Bush1.setAttribute("class", "bush-dark1");
 GreetingContainer.appendChild(Bush1);
 
 const Bush2 = new Image();
-Bush2.src = "/assets/img/Artboard 36 1.png";
+Bush2.src = "./assets/img/Artboard 36 1.png";
 Bush2.setAttribute("class", "bush-dark2");
 GreetingContainer.appendChild(Bush2);
 
 const Bush3 = new Image();
-Bush3.src = "/assets/img/Artboard 39 1.png";
+Bush3.src = "./assets/img/Artboard 39 1.png";
 Bush3.setAttribute("class", "bush-light1");
 GreetingContainer.appendChild(Bush3);
 
 const Bush4 = new Image();
-Bush4.src = "/assets/img/Artboard 39 2.png";
+Bush4.src = "./assets/img/Artboard 39 2.png";
 Bush4.setAttribute("class", "bush-light2");
 GreetingContainer.appendChild(Bush4);
 
 const Cat = new Image();
-Cat.src = "/assets/img/Cat/Artboard 15.png";
+Cat.src = "./assets/img/Cat/Artboard 15.png";
 Cat.setAttribute("class", "cat");
 GreetingContainer.appendChild(Cat);
 
 const Coin1 = new Image();
-Coin1.src = "/assets/img/Artboard 35.png";
+Coin1.src = "./assets/img/Artboard 35.png";
 Coin1.setAttribute("class", "coin1");
 GreetingContainer.appendChild(Coin1);
 
 const Coin2 = new Image();
-Coin2.src = "/assets/img/Artboard 35.png";
+Coin2.src = "./assets/img/Artboard 35.png";
 Coin2.setAttribute("class", "coin2");
 GreetingContainer.appendChild(Coin2);
 
 const KiteFirework = new Image();
-KiteFirework.src = "/assets/img/Artboard 33.png";
+KiteFirework.src = "./assets/img/Artboard 33.png";
 KiteFirework.setAttribute("class", "kite-firework");
 GreetingContainer.appendChild(KiteFirework);
 
@@ -149,7 +149,7 @@ ButtonConfirm.innerText = "Tạo thiệp";
 FormPopup.appendChild(ButtonConfirm);
 
 const ButtonClose = new Image();
-ButtonClose.src = "/assets/img/xmark-solid.svg";
+ButtonClose.src = "./assets/img/xmark-solid.svg";
 ButtonClose.setAttribute("class", "close");
 FormPopup.appendChild(ButtonClose);
 
@@ -174,7 +174,7 @@ CardContent.setAttribute("class","card-content");
 CardFaceBack.appendChild(CardContent);
 
 const CardOutsideFront = new Image();
-CardOutsideFront.src = "/assets/img/Artboard 1.png";
+CardOutsideFront.src = "./assets/img/Artboard 1.png";
 CardFaceFront.appendChild(CardOutsideFront);
 
 const FormResults = document.createElement("div");
@@ -182,7 +182,7 @@ FormResults.setAttribute("class","form-result");
 CardContent.appendChild(FormResults);
 
 const CardInsideBack = new Image();
-CardInsideBack.src = "/assets/img/Artboard 2.png";
+CardInsideBack.src = "./assets/img/Artboard 2.png";
 CardContent.appendChild(CardInsideBack);
 
 const OtherNameResult = document.createElement("p");
@@ -1021,40 +1021,3 @@ ButtonConfirm.addEventListener("click", function (e) {
     TextResult.innerText = message;
 })
 
-//Sakura Fall
-const addSakura = () => {
-    const random = (min, max) => Math.random() * (max - min) + min;
-    let screenWidth = window.innerWidth;
-    let screenHeight = window.innerHeight;
-    let sakura = document.createElement('div');
-    sakura.style.position = 'absolute';
-    sakura.style.top = "-2px";
-    sakura.style.right = random(0, screenWidth) + "px";
-    sakura.style.width = "10px";
-    sakura.style.height = "10px";
-    sakura.style.backgroundColor = "#EBBEC8";
-    sakura.style.borderRadius = "30% 70% 70% 30% / 30% 30% 70% 70%";
-    sakura.style.zIndex = "10";
-    const sakuraFalling = () => {
-        sakura.style.top = parseInt(sakura.style.top) + 2 + "px";
-        sakura.style.right = parseInt(sakura.style.right) + 1 + "px";
-        if (parseInt(sakura.style.top) > screenHeight) {
-            sakura.style.opacity = 0;
-            sakura.style.transition = "opacity 500ms";
-        }
-        window.requestAnimationFrame(sakuraFalling);
-    };
-    window.requestAnimationFrame(sakuraFalling);
-    GreetingContainer.appendChild(sakura);
-};
-
-function callBackSakura() {
-    for (let i = 0; i < 100; i++) {
-        setTimeout(addSakura, i * 100);
-    }
-}
-function callSakuraFalling() {
-    callBackSakura();
-    setInterval(callBackSakura, 11500);
-}
-callSakuraFalling();

@@ -6,42 +6,42 @@ LoadingContainer.setAttribute("class", "loading-container");
 LoadingPageContainer.appendChild(LoadingContainer);
 
 const LanternString = new Image();
-LanternString.src = "/assets/img/Vector 1.png";
+LanternString.src = "./assets/img/Vector 1.png";
 LanternString.setAttribute("class", "lantern-string");
 LoadingContainer.appendChild(LanternString);
 
 const LanternSmall = new Image();
-LanternSmall.src = "/assets/img/Artboard 32.png";
+LanternSmall.src = "./assets/img/Artboard 32.png";
 LanternSmall.setAttribute("class", "lantern-small");
 LoadingContainer.appendChild(LanternSmall);
 
 const LanternMedium = new Image();
-LanternMedium.src = "/assets/img/Artboard 32.png";
+LanternMedium.src = "./assets/img/Artboard 32.png";
 LanternMedium.setAttribute("class", "lantern-medium");
 LoadingContainer.appendChild(LanternMedium);
 
 const LanternLarge = new Image();
-LanternLarge.src = "/assets/img/Artboard 32.png";
+LanternLarge.src = "./assets/img/Artboard 32.png";
 LanternLarge.setAttribute("class", "lantern-large");
 LoadingContainer.appendChild(LanternLarge);
 
 const KiteFirework = new Image();
-KiteFirework.src = "/assets/img/Artboard 33.png";
+KiteFirework.src = "./assets/img/Artboard 33.png";
 KiteFirework.setAttribute("class", "kite-firework");
 LoadingContainer.appendChild(KiteFirework);
 
 const Cloud1 = new Image();
-Cloud1.src = "/assets/img/Artboard 40.png";
+Cloud1.src = "./assets/img/Artboard 40.png";
 Cloud1.setAttribute("class", "cloud1");
 LoadingContainer.appendChild(Cloud1);
 
 const Cloud2 = new Image();
-Cloud2.src = "/assets/img/Artboard 40.png";
+Cloud2.src = "./assets/img/Artboard 40.png";
 Cloud2.setAttribute("class", "cloud2");
 LoadingContainer.appendChild(Cloud2);
 
 const Cloud3 = new Image();
-Cloud3.src = "/assets/img/Artboard 40.png";
+Cloud3.src = "./assets/img/Artboard 40.png";
 Cloud3.setAttribute("class", "cloud3");
 LoadingContainer.appendChild(Cloud3);
 
@@ -109,7 +109,7 @@ function addContent() {
   Cloud2.classList.add("show");
 }
 function playHappyNewYearAudio() {
-  const happyNewYearAudio = new Audio("/assets/audio/happy_new_year_audio.mp3");
+  const happyNewYearAudio = new Audio("./assets/audio/happy_new_year_audio.mp3");
   LoadingContainer.appendChild(happyNewYearAudio);
   happyNewYearAudio.play();
 }

@@ -3,27 +3,27 @@ WishingContainer.setAttribute('class', 'wishing-container');
 document.body.appendChild(WishingContainer);
 
 const lionLeft = new Image();
-lionLeft.src = "/assets/img/Wishing/lion-left.png";
+lionLeft.src = "./assets/img/Wishing/lion-left.png";
 const lionRight = new Image();
-lionRight.src = "/assets/img/Wishing/lion-right.png";
+lionRight.src = "./assets/img/Wishing/lion-right.png";
 const cloud = new Image();
-cloud.src = "/assets/img/Wishing/cloud.png";
+cloud.src = "./assets/img/Wishing/cloud.png";
 const fireworkLeft = new Image();
-fireworkLeft.src = "/assets/img/Wishing/firework2.png";
+fireworkLeft.src = "./assets/img/Wishing/firework2.png";
 const lanternCenter = new Image();
-lanternCenter.src = "/assets/img/Wishing/lantern-1.png";
+lanternCenter.src = "./assets/img/Wishing/lantern-1.png";
 const lantern2 = new Image();
-lantern2.src = "/assets/img/Wishing/lantern-2.png";
+lantern2.src = "./assets/img/Wishing/lantern-2.png";
 const lantern3 = new Image();
-lantern3.src = "/assets/img/Wishing/lantern3.png";
+lantern3.src = "./assets/img/Wishing/lantern3.png";
 const ribbonLeft = new Image();
-ribbonLeft.src = "/assets/img/Wishing/ribbon-left.png";
+ribbonLeft.src = "./assets/img/Wishing/ribbon-left.png";
 const wishingPaper = new Image();
-wishingPaper.src = "/assets/img/Wishing/wishing-paper.png";
+wishingPaper.src = "./assets/img/Wishing/wishing-paper.png";
 const circle = new Image();
-circle.src = "/assets/img/Wishing/circle.png";
+circle.src = "./assets/img/Wishing/circle.png";
 const sakuraCenter = new Image();
-sakuraCenter.src = "/assets/img/Wishing/sakura-wishing-tree.png";
+sakuraCenter.src = "./assets/img/Wishing/sakura-wishing-tree.png";
 
 WishingContainer.appendChild(circle);
 circle.setAttribute('class', 'circle');
@@ -84,7 +84,7 @@ for (let i = 0; i < 35; i++) {
 }
 function createMoneyRed(i) {
     const newMoneyRed = new Image();
-    newMoneyRed.src = "/assets/img/Wishing/money-red.png";
+    newMoneyRed.src = "./assets/img/Wishing/money-red.png";
     newMoneyRed.setAttribute("style", "position: absolute");
     MoneyRedContainer.appendChild(newMoneyRed);
     newMoneyRed.className = 'new-money-red';
@@ -122,12 +122,12 @@ formWishContainer.appendChild(formWish);
 const formClose = document.createElement('div');
 formClose.className = 'form-close';
 const formCloseIcon = new Image();
-formCloseIcon.src = "/assets/img/Wishing/close.png";
+formCloseIcon.src = "./assets/img/Wishing/close.png";
 formCloseIcon.className = 'form-i';
 formClose.appendChild(formCloseIcon);
 formWish.appendChild(formClose);
 const formCat = new Image();
-formCat.src = '/assets/img/Wishing/cat-fortune-form.png';
+formCat.src = './assets/img/Wishing/cat-fortune-form.png';
 formCat.className = 'cat-fortune-form';
 formWish.appendChild(formCat);
 const formInput = document.createElement('textarea');
@@ -286,7 +286,7 @@ WishingStyle.innerHTML = `
         height: 100%;
     }
     .lantern-center-front, .lantern-center-back, .lantern-center-left, .lantern-center-right {
-        background-image: url("/assets/img/Wishing/lantern-1.png");
+        background-image: url("./assets/img/Wishing/lantern-1.png");
     }
     .lantern-center-front {
         transform: translateZ(1em);

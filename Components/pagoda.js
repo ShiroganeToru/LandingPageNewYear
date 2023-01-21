@@ -3,28 +3,28 @@ PagodaContainer.setAttribute("class", "pagoda-container");
 document.body.appendChild(PagodaContainer);
 
 const apricot = new Image();
-apricot.src = "/assets/img/Pagoda/apricot.png";
+apricot.src = "./assets/img/Pagoda/apricot.png";
 const cat = new Image();
-cat.src = "/assets/img/Pagoda/cat.png";
+cat.src = "./assets/img/Pagoda/cat.png";
 const fortune = new Image();
-fortune.src = "/assets/img/Pagoda/fortune.png";
+fortune.src = "./assets/img/Pagoda/fortune.png";
 const fortunePray = new Image();
-fortunePray.src = "/assets/img/Pagoda/fortune-pray.png";
+fortunePray.src = "./assets/img/Pagoda/fortune-pray.png";
 const handPray = new Image();
-handPray.src = "/assets/img/Pagoda/hand-pray.png";
+handPray.src = "./assets/img/Pagoda/hand-pray.png";
 const lanternCenter = new Image();
-lanternCenter.src = "/assets/img/Pagoda/lantern-center.png";
+lanternCenter.src = "./assets/img/Pagoda/lantern-center.png";
 const lanternCenter2 = new Image();
-lanternCenter2.src = "/assets/img/Pagoda/lantern-center.png";
+lanternCenter2.src = "./assets/img/Pagoda/lantern-center.png";
 const sakuraLeft = new Image();
-sakuraLeft.src = "/assets/img/Pagoda/sakura-left.png";
+sakuraLeft.src = "./assets/img/Pagoda/sakura-left.png";
 const fortunePrayRight = new Image();
-fortunePrayRight.src = "/assets/img/Pagoda/fortune-pray.png";
+fortunePrayRight.src = "./assets/img/Pagoda/fortune-pray.png";
 const fireworkRight = new Image();
-fireworkRight.src = "/assets/img/Wishing/firework1.png";
+fireworkRight.src = "./assets/img/Wishing/firework1.png";
 fireworkRight.setAttribute("class", "firework-right");
 const PagodaIncense = new Image();
-PagodaIncense.src = "/assets/img/Pagoda/pagoda-incense.png";
+PagodaIncense.src = "./assets/img/Pagoda/pagoda-incense.png";
 
 //after pray starts
 const haloContainer = document.createElement("div");
@@ -104,7 +104,7 @@ const addMoney = () => {
     let screenWidth = window.innerWidth;
     let screenHeight = window.innerHeight;
     let money = new Image();
-    money.src = "../assets/img/Wishing/money-red.png";
+    money.src = "./assets/img/Wishing/money-red.png";
     money.style.position = "absolute";
     money.style.top = "-2px";
     money.style.right = random(0, screenWidth) + "px";
