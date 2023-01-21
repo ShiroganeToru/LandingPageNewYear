@@ -76,11 +76,11 @@ const slidePage = [
     id: "script3",
   },
   {
-    path: "./Components/Pagoda.js",
+    path: "./Components/pagoda.js",
     id: "script4",
   },
   {
-    path: "./Components/Wishing.js",
+    path: "./Components/wishing.js",
     id: "script5",
   },
   {
