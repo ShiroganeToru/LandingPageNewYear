@@ -615,6 +615,17 @@ GreetingStyle.innerHTML = `
         font-weight: 700;
     }
 
+    .download {
+        padding: 10px;
+        background: #d20000;
+        color: white;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 700px;
+        font-size: 24px;
+        display: none;
+    }
+
     @media only screen and (max-width: 1440px) {
         .lantern-large {
             width: 15%;
@@ -1010,6 +1021,7 @@ MyText.addEventListener("input", function () {
 document.querySelector(".button-confirm").addEventListener("click", function () {
     document.querySelector(".card").style.display = "block";
     document.querySelector(".guide").style.display = "block";
+    document.querySelector(".download").style.display = "block";
 });
 
 const cardflip = document.querySelector(".card-inner");
@@ -1038,5 +1050,34 @@ ButtonConfirm.addEventListener("click", function (e) {
     NameResult.innerText = yname;
     OtherNameResult.innerText = "Gửi đến " + otherName;
     TextResult.innerText = message;
-})
+});
+
+//Download Image
+const test = document.createElement("a");
+test.setAttribute("class","download");
+test.innerText = "Tải thiệp về nè";
+test.id = "download";
+GreetingContainer.appendChild(test);
+test.style.position = "absolute";
+test.style.bottom = "50px";
+test.style.zIndex = "10";
+CardContent.id = "cardContent";
+GreetingContainer.onload = function autoClick() {
+    $("#download").click();
+}
+
+$(document).ready(function () {
+    var element = $("#cardContent");
+
+    $("#download").on('click', function () {
+        html2canvas(element, {
+            onrendered: function (canvas) {
+                var imageData = canvas.toDataURL("image/jpg");
+                var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
+                $("#download").attr("download", "card.jpg").attr("href", newData);
+            }
+        });
+
+    });
+});
 
