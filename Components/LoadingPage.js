@@ -30,16 +30,6 @@ KiteFirework.src = "./assets/img/Artboard 33.png";
 KiteFirework.setAttribute("class", "kite-firework");
 LoadingContainer.appendChild(KiteFirework);
 
-const Cloud1 = new Image();
-Cloud1.src = "./assets/img/Artboard 40.png";
-Cloud1.setAttribute("class", "cloud1");
-LoadingContainer.appendChild(Cloud1);
-
-const Cloud2 = new Image();
-Cloud2.src = "./assets/img/Artboard 40.png";
-Cloud2.setAttribute("class", "cloud2");
-LoadingContainer.appendChild(Cloud2);
-
 const Cloud3 = new Image();
 Cloud3.src = "./assets/img/Artboard 40.png";
 Cloud3.setAttribute("class", "cloud3");
@@ -49,13 +39,10 @@ const LoadingFrame = document.createElement("div");
 LoadingFrame.setAttribute("class", "frame");
 LoadingContainer.appendChild(LoadingFrame);
 
-const Rhombus = document.createElement("div");
+const Rhombus = new Image();
+Rhombus.src = "./assets/img/Artboard 42.png";
 Rhombus.setAttribute("class", "rhombus");
 LoadingFrame.appendChild(Rhombus);
-
-const RhombusBorder = document.createElement("div");
-RhombusBorder.setAttribute("class", "rhombus-border");
-LoadingFrame.appendChild(RhombusBorder);
 
 const LoadingContent = document.createElement("div");
 LoadingContent.setAttribute("class", "loading-content");
@@ -105,8 +92,6 @@ export function waitCountDown() {
 function addContent() {
   LoadingContent.classList.add("show");
   LoadingFrame.classList.add("show");
-  Cloud1.classList.add("show");
-  Cloud2.classList.add("show");
 }
 function playHappyNewYearAudio() {
   const happyNewYearAudio = new Audio("./assets/audio/happy_new_year_audio.mp3");
@@ -297,24 +282,6 @@ LoadingStyle.innerHTML = `
         transform: rotate(-30deg);
     }
 
-    .cloud1 {
-        position: absolute;
-        top: 620px;
-        left: 870px;
-        z-index: 10;
-        width: 300px;
-        opacity: 0;
-    }
-
-    .cloud2 {
-        position: absolute;
-        top: 260px;
-        left: 400px;
-        width: 400px;
-        z-index: 10;
-        opacity: 0;
-    }
-
     .cloud3 {
         position: absolute;
         top: -200px;
@@ -335,21 +302,7 @@ LoadingStyle.innerHTML = `
     }
     
     .rhombus {
-        width: 500px;
-        height: 500px;
-
-        background: #FFBC83;
-        transform: rotate(45deg);
-    }
-
-    .rhombus-border {
-        width: 450px;
-        height: 450px;
-
-        background: #FFBC83;
-        border: 2px solid #D20000;
-        transform: rotate(45deg);
-        position: absolute;
+        width: 50%;
     }
 
     .loading-content {
@@ -410,14 +363,8 @@ LoadingStyle.innerHTML = `
             left: 240px;
         }
 
-        .cloud1 {
-            top: 640px;
-            left: 600px;
-        }
-
-        .cloud2 {
-            top: 280px;
-            left: 150px;
+        .rhombus {
+            width: 70%;
         }
 
         .cloud3 {
@@ -454,16 +401,6 @@ LoadingStyle.innerHTML = `
             left: 220px;
         }
 
-        .cloud1 {
-            top: 570px;
-            left: 400px;
-        }
-
-        .cloud2 {
-            top: 250px;
-            left: 30px;
-        }
-
         .cloud3 {
             top: -200px;
             left: 700px;
@@ -476,8 +413,7 @@ LoadingStyle.innerHTML = `
         }
 
         .rhombus {
-            width: 450px;
-            height: 450px;
+            width: 80%;
         }
 
         .rhombus-border {
@@ -526,17 +462,6 @@ LoadingStyle.innerHTML = `
             transform: rotate(-15deg);
         }
 
-        .cloud1 {
-            top: 600px;
-            left: 240px;
-            width: 300px;
-        }
-
-        .cloud2 {
-            top: 660px;
-            left: -200px;
-        }
-
         .cloud3 {
             width: 400px;
             top: -130px;
@@ -548,16 +473,11 @@ LoadingStyle.innerHTML = `
         }
         
         .rhombus {
-            width: 450px;
-            height: 450px;
-        }
-
-        .rhombus-border {
-            width: 400px;
-            height: 400px;
+            width: 100%;
         }
 
         .ny-title {
+            width: 400px;
             font-size: 60px;
             line-height: 60px;
         }
@@ -597,17 +517,6 @@ LoadingStyle.innerHTML = `
             transform: rotate(-15deg);
         }
 
-        .cloud1 {
-            top: 520px;
-            left: 120px;
-            width: 200px;
-        }
-
-        .cloud2 {
-            top: 680px;
-            left: -200px;
-        }
-
         .cloud3 {
             width: 400px;
             top: 0px;
@@ -619,13 +528,7 @@ LoadingStyle.innerHTML = `
         }
         
         .rhombus {
-            width: 250px;
-            height: 250px;
-        }
-
-        .rhombus-border {
-            width: 225px;
-            height: 225px;
+            width: 120%;
         }
 
         .ny-title {
@@ -669,17 +572,6 @@ LoadingStyle.innerHTML = `
             transform: rotate(-15deg);
         }
 
-        .cloud1 {
-            top: 520px;
-            left: 120px;
-            width: 200px;
-        }
-
-        .cloud2 {
-            top: 680px;
-            left: -200px;
-        }
-
         .cloud3 {
             width: 400px;
             top: 0px;
@@ -688,11 +580,6 @@ LoadingStyle.innerHTML = `
 
         .loading-content {
             gap: 10px;
-        }
-        
-        .rhombus {
-            width: 250px;
-            height: 250px;
         }
 
         .rhombus-border {
